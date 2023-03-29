@@ -9,11 +9,11 @@ import Login from "./pages/Login"
 import { RegisterUser } from './pages/registerUser';
 import RevenuesList from './pages/RevenuesList';
 import ExpensesList from './pages/ExpensesList';
-import { FormContact } from './pages/FormContact';
 import { AdminDashboard } from './pages/AdminDashboard';
 import Home from './pages/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import FormContact from './pages/FormContact';
 
 const router = createBrowserRouter([
   {
@@ -27,14 +27,6 @@ const router = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <Login />
-      },
-      {
-        path: '/contact',
-        element: <Login />
-      },
-      {
-        path: '/login',
         element: <Login />
       },
       {
@@ -62,10 +54,6 @@ const router = createBrowserRouter([
       {
         path:'/contact',
         element: <FormContact/>
-      },
-      {
-        path:'/admin',
-        element: <AdminDashboard/>
       }
     ]
   }

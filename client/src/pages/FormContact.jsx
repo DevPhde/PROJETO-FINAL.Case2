@@ -8,7 +8,7 @@ import { BackdropModal } from '../components/modals/BackdropModal';
 import Logotipo from "../images/logo5.png"
 import ilustContact from "../images/ilust3.png"
 
-export function FormContact() {
+function FormContact() {
     const [values, setValues] = useState({
         name: "",
         email: "",
@@ -58,42 +58,56 @@ export function FormContact() {
 
     return (
         <main className="main-container-contact">
-            {feedbackUser.message && <BackdropModal title={feedbackUser.error ? "Mensagem enviada!" : "Erro interno"} message={feedbackUser.message} namebutton="Fechar" />}
-            <div className="div-img-login position-relative">
-                <img className="img-contact" src={ilustContact} />
-            </div>
-            <div className='border bg-white m-auto div-form-contact'>
-                <form onSubmit={handleSubmit}>
-                    <h2 className='text-center'>Contato</h2>
-                    <div className="form-floating mt-3 mb-3">
-                        <input type="text" className="form-control input-contact" id="floatingInput" onFocus={() => setIsValid(prevState => ({ ...prevState, name: true }))} onChange={(event) => setValues((prevState) => ({ ...prevState, name: event.target.value }))} value={values.name} />
-                        <label htmlFor="floatingInput">Nome</label>
-                    </div>
-                    {!isValid.name && <p className="text-danger">Preencha o campo nome com pelo menos 3 caracteres.</p>}
-                    <div className="form-floating mb-3">
-                        <input type="text" className="form-control input-contact" id="floatingInput" onFocus={() => setIsValid(prevState => ({ ...prevState, email: true }))} onChange={(event) => setValues((prevState) => ({ ...prevState, email: event.target.value }))} value={values.email} />
-                        <label htmlFor="floatingInput">email</label>
-                    </div>
-                    {!isValid.email && <p className="text-danger">Preencha com um email válido.</p>}
-                    <div className="form-floating mb-3">
-                        <input type="text" className="form-control input-contact" id="floatingInput" onFocus={() => setIsValid(prevState => ({ ...prevState, subject: true }))} onChange={(event) => setValues((prevState) => ({ ...prevState, subject: event.target.value }))} value={values.subject} />
-                        <label htmlFor="floatingInput">Assunto</label>
-                    </div>
-                    {!isValid.subject && <p className="text-danger">O campo assunto deve ser preenchido.</p>}
-                    <div className="form-floating text-quality">
-                        <textarea cols="40" rows="40" className="form-control textarea-quality h-25" onFocus={() => setIsValid(prevState => ({ ...prevState, message: true }))} onChange={(event) => setValues((prevState) => ({ ...prevState, message: event.target.value }))} value={values.message}></textarea>
-                        <label htmlFor="floatingTextarea2">Mensagem</label>
-                    </div>
-                    {!isValid.message && <p className="text-danger">O campo mensagem deve ser preenchido.</p>}
 
-                    <div className='mb-5 mt-5 text-center'>
-                        {loading ? <Loading /> : <button type='submit' className='btn btn-contact'>Enviar</button>}
 
-                    </div>
-                </form>
-            </div>
+
+
+
+   
+
+                {feedbackUser.message && <BackdropModal title={feedbackUser.error ? "Mensagem enviada!" : "Erro interno"} message={feedbackUser.message} namebutton="Fechar" />}
+
+                <div className='border bg-white m-auto div-form-contact'>
+                    <form onSubmit={handleSubmit} className="form-contact">
+                        <h2 className='text-center my-4'>Fale conosco</h2>
+                        <div className="form-floating mt-3 mb-3">
+                            <input type="text" className="form-control input-contact" id="floatingInput" onFocus={() => setIsValid(prevState => ({ ...prevState, name: true }))} onChange={(event) => setValues((prevState) => ({ ...prevState, name: event.target.value }))} value={values.name} />
+                            <label htmlFor="floatingInput">Nome</label>
+                        </div>
+                        {!isValid.name && <p className="text-danger">Preencha o campo nome com pelo menos 3 caracteres.</p>}
+                        <div className="form-floating mb-3">
+                            <input type="text" className="form-control input-contact" id="floatingInput" onFocus={() => setIsValid(prevState => ({ ...prevState, email: true }))} onChange={(event) => setValues((prevState) => ({ ...prevState, email: event.target.value }))} value={values.email} />
+                            <label htmlFor="floatingInput">email</label>
+                        </div>
+                        {!isValid.email && <p className="text-danger">Preencha com um email válido.</p>}
+                        <div className="form-floating mb-3">
+                            <input type="text" className="form-control input-contact" id="floatingInput" onFocus={() => setIsValid(prevState => ({ ...prevState, subject: true }))} onChange={(event) => setValues((prevState) => ({ ...prevState, subject: event.target.value }))} value={values.subject} />
+                            <label htmlFor="floatingInput">Assunto</label>
+                        </div>
+                        {!isValid.subject && <p className="text-danger">O campo assunto deve ser preenchido.</p>}
+                        <div className="form-floating text-quality">
+                            <textarea cols="40" rows="40" className="form-control textarea-quality h-25" onFocus={() => setIsValid(prevState => ({ ...prevState, message: true }))} onChange={(event) => setValues((prevState) => ({ ...prevState, message: event.target.value }))} value={values.message}></textarea>
+                            <label htmlFor="floatingTextarea2">Mensagem</label>
+                        </div>
+                        {!isValid.message && <p className="text-danger">O campo mensagem deve ser preenchido.</p>}
+
+                        <div className='mb-5 mt-5 text-center'>
+                            {loading ? <Loading /> : <button type='submit' className='btn btn-contact fw-medium'>Enviar</button>}
+
+                        </div>
+                    </form>
+                </div>
+
+
+                <div className="div-img-contact"><img className="img-contact" src={ilustContact} /></div>
+
+
+
+
 
 
         </main >
     )
 }
+
+export default FormContact
