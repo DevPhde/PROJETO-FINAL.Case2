@@ -20,6 +20,9 @@ function Login() {
             setIsChecked(true)
         }
         if (sessionStorage.getItem('authorization')) {
+            if(sessionStorage.getItem('admin')) {
+                return navigate('/admin')
+            }
             navigate("/dashboard");
         }
 
@@ -35,11 +38,17 @@ function Login() {
 
             if (response.status == 200) {
                 const hash = response.data.message;
+                if(response.data.admin) {
+                    console.log(response.message)
+                    sessionStorage.setItem('admin', true)
+                }
                 sessionStorage.setItem('authorization', hash)
-                navigate("/dashboard");
+                // navigate("/dashboard");
+                console.log(response.data)
                 setLoading(false)
             }
         } catch (e) {
+            console.log(e)
             if (e.response.status == 500) {
                 <BackdropModal title={"Erro Interno"} message={e.response.data.message} to={null} namebutton={"Fechar"} />
                 setLoading(false)

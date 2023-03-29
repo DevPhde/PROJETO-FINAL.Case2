@@ -1,9 +1,11 @@
-import { useContext, useEffect, useState } from 'react'
-import { AxiosProvider } from '../providers/axiosProvider'
-import { VerticalModal } from './modals/VerticalModal'
-import "../style/modal.css"
-import { BackdropModal } from './modals/BackdropModal'
-import { Loading } from './Loading'
+import { useEffect, useState } from 'react'
+import { AxiosProvider } from '../../providers/axiosProvider'
+import { VerticalModal } from './VerticalModal'
+import "../../style/modal.css"
+import { BackdropModal } from './BackdropModal'
+import { Loading } from '../Loading'
+
+
 export function EditProfile(props) {
     const hash = sessionStorage.getItem('authorization');
     const [loadingReq, setLoadingReq] = useState(false);

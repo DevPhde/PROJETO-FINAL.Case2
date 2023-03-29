@@ -10,7 +10,7 @@ import { RegisterUser } from './pages/registerUser';
 import RevenuesList from './pages/RevenuesList';
 import ExpensesList from './pages/ExpensesList';
 import { FormContact } from './pages/FormContact';
-
+import { AdminDashboard } from './pages/AdminDashboard';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -46,6 +46,10 @@ const router = createBrowserRouter([
       {
         path:'/contact',
         element: <FormContact/>
+      },
+      {
+        path:'/admin',
+        element: <AdminDashboard/>
       }
     ]
   }

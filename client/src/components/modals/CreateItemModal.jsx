@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
-import { AxiosProvider } from "../providers/axiosProvider";
-import { VerticalModal } from './modals/VerticalModal';
+import { AxiosProvider } from "../../providers/axiosProvider";
+import { VerticalModal } from './VerticalModal';
 import { Form } from "react-bootstrap";
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import { BackdropModal } from "./modals/BackdropModal";
-function CreateItemModal(props) {
+import { BackdropModal } from "./BackdropModal";
+export function CreateItemModal(props) {
     const hash = sessionStorage.getItem('authorization')
     const [type, setType] = useState("Selecione")
     const [creatingItem, setCreatingItem] = useState(false)
@@ -236,5 +236,3 @@ function CreateItemModal(props) {
         </div >
     )
 }
-
-export default CreateItemModal
