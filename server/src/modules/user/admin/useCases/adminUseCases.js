@@ -26,7 +26,6 @@ export class AdminUseCases extends DeleteUserUseCases {
     static async userDeleting(id) {
         try {
             const user = await this.findUserById(id);
-            console.log(user)
             const deleted = await this.checkDelete(user.hash)
             return deleted
         } catch {
@@ -52,6 +51,7 @@ export class AdminUseCases extends DeleteUserUseCases {
         }
     }
 
+    
     static async editArticle(id, data) {
         try {
             await this.articleDbRepositories.update(data, {id: id})
