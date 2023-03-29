@@ -9,6 +9,7 @@ import Login from "./pages/Login"
 import { RegisterUser } from './pages/registerUser';
 import RevenuesList from './pages/RevenuesList';
 import ExpensesList from './pages/ExpensesList';
+import Home from './pages/Home';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,18 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
+        element: <Home />
+      },
+      {
+        path: '/about',
+        element: <Login />
+      },
+      {
+        path: '/contact',
+        element: <Login />
+      },
+      {
+        path: '/login',
         element: <Login />
       },
       {
