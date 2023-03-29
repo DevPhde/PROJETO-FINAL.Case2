@@ -1,4 +1,4 @@
-import NavbarPage from "../components/NavbarPage"
+
 import '../style/home.css'
 import Carousel from 'react-bootstrap/Carousel'
 import React, { useState } from 'react';
@@ -30,7 +30,7 @@ function Home() {
 
         <div className="background">
 
-            <NavbarPage />
+
 
 
 
@@ -165,7 +165,7 @@ function Home() {
 
 
                 </div>
-                <Footer />
+
 
 
 

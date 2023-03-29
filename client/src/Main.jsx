@@ -12,6 +12,8 @@ import ExpensesList from './pages/ExpensesList';
 import { FormContact } from './pages/FormContact';
 import { AdminDashboard } from './pages/AdminDashboard';
 import Home from './pages/Home';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +23,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />
+        element: [<Header model="default" />, <Home/>, <Footer/>]
       },
       {
         path: '/about',
