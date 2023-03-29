@@ -7,8 +7,11 @@ export class AuthorizationController extends AuthorizationUseCases {
         const data = req.body;
         const verifiedUser = await this.validUser(data);
         if (verifiedUser.status) {
+            
             try {
+                const admin = await this.getUser(data.email).then(user => user.admin == true) ? true : false
                 const jwt = await this.releaseUser(data.email)
+                jwt.admin = admin
                 jwt.status ? res.status(200).send(jwt) : res.status(500).send(jwt)
             } catch {
                 res.status(500).send(new ResponseError('AC 15L'))

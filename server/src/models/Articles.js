@@ -1,35 +1,25 @@
 import sequelize from "../db/dbConfig.js";
 import { DataTypes } from "sequelize";
 
-export const User = sequelize.define('User', {
-  id: {
+export const Article = sequelize.define('Article', {
+  id: { 
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true
   },
-  name: {
+  title: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  cpf: {
+  text: {
     type: DataTypes.STRING,
-    allowNull: false,
-    unique: true
+    allowNull:false
   },
-  email: {
+  page: {
     type: DataTypes.STRING,
-    allowNull: false,
-    unique: true
+    allowNull:false
   },
-  password: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  hash: {
+  image: {
     type: DataTypes.STRING
-  },
-  admin: {
-    type: DataTypes.BOOLEAN,
-    defaultValue: false
   }
 });

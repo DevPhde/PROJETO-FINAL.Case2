@@ -2,14 +2,16 @@ import { User } from "../models/User.js";
 import { Expense } from "../models/Expense.js";
 import { TypeExpense } from "../models/TypeExpense.js";
 import { Revenue } from "../models/Revenue.js";
-import sequelize from "../db/dbConfig.js";
+import { Article } from "../models/Articles.js";
+
+
 export class BaseModel {
   constructor(table) {
     this.table = table;
   }
 
   async sum(param) {
-    return await this.table.sum('amount', { where: param });
+    return await this.table.sum('amount', {where: param});
   }
 
   async findUserId(param) {
@@ -83,5 +85,10 @@ export class TypeExpenseDatabaseRepositories extends BaseModel {
 export class RevenueDatabaseRepositories extends BaseModel {
   constructor() {
     super(Revenue)
+  }
+}
+export class ArticleDatabaseRepositories extends BaseModel {
+  constructor() {
+    super(Article)
   }
 }
