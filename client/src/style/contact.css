@@ -1,0 +1,16 @@
+.btn-contact {
+    background-color: #048A78;
+    ;
+    color: white;
+    font-size: clamp(10px, 5vw, 25px);
+}
+
+.btn-contact:hover {
+    background-color: #023f37;
+    color: white;
+}
+
+.text-quality {
+    height: 400px;
+    resize: none;
+}
