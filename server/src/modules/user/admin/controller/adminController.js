@@ -1,5 +1,4 @@
 
-import { response } from "express";
 import { AdminUseCases } from "../useCases/adminUseCases.js";
 
 export class AdminController extends AdminUseCases {
