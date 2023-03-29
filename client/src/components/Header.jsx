@@ -8,11 +8,11 @@ import LogoSmall from '../images/logo5.png'
 import { Link } from 'react-router-dom';
 
 
-function NavbarPage() {
+function Header(props) {
 
 
 
-
+if(props.model == "default"){
     return (
 
     <div >
@@ -49,7 +49,7 @@ function NavbarPage() {
     </div>
     
     )
-
+  }
 }
 
-export default NavbarPage
+export default Header
