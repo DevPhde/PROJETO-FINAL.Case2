@@ -2,7 +2,7 @@ import { Response, ResponseError } from "../../../../models/response/Response.js
 import { ArticleDatabaseRepositories } from "../../../../repositories/databaseRepositories.js";
 import { UserDatabaseRepositories } from "../../../../repositories/databaseRepositories.js";
 import { DeleteUserUseCases } from "../../deleteAccount/useCases/deleteUserAccountUseCases.js";
-import { RegisterController } from "../../userRegister/controller/registerController.js";
+
 export class AdminUseCases extends DeleteUserUseCases {
     static articleDbRepositories = new ArticleDatabaseRepositories();
     static userDbRepositories = new UserDatabaseRepositories();
