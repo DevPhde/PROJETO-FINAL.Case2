@@ -107,17 +107,17 @@ export function RegisterUser() {
     return (
         <main className="main-container">
             <div className="div-img-login position-relative">
-                <img className="img-logo position-absolute top-0 start-0" src={Logotipo} />
+                
                 <img className="img-register" src={IlustRegister} />
             </div>
             <div>
                 {modal && <BackdropModal title={feedbackUser.error ? "Erro Interno" : "Conta criada!"} message={feedbackUser.message} to={feedbackUser.error ? null : "/"} namebutton={feedbackUser.error ? "Fechar" : "Ir para login"} />}
             </div>
-            <div className="div-info-recovery container text-center  align-items-center">
-                <h1 className="fw-bold title-recovery mb-5">Cadastre-se</h1>
+            <div className="div-info-register container text-center  align-items-center">
+                <h1 className="fw-bold title-register mb-5">Cadastre-se</h1>
 
-                <div className="form-floating mb-2 div-input-register">
-                    <input type="text" className="form-control input-recovery" value={name} onChange={e => {
+                <div className="form-floating mb-4 div-input-register">
+                    <input type="text" className="form-control input-register" value={name} onChange={e => {
                         setName(e.target.value);
                     }} onFocus={() => setUser(prevState => ({ ...prevState, name: false }))} />
                     <label htmlFor="floatingInput">Nome Completo</label>
@@ -126,15 +126,15 @@ export function RegisterUser() {
 
 
 
-                <div className="form-floating mb-2 div-input-register">
-                    <input type="text" className="form-control input-recovery" value={cpf} onChange={handleChange} onFocus={() => setUser(prevState => ({ ...prevState, cpf: false }))} />
+                <div className="form-floating mb-4 div-input-register">
+                    <input type="text" className="form-control input-register" value={cpf} onChange={handleChange} onFocus={() => setUser(prevState => ({ ...prevState, cpf: false }))} />
                     <label htmlFor="floatingInput">CPF</label>
                 </div>
                 {user.cpf && <p className="text-danger">CPF inválido</p>}
 
 
-                <div className="form-floating mb-2 div-input-register">
-                    <input type="text" className="form-control input-recovery" value={email} onChange={e => {
+                <div className="form-floating mb-4 div-input-register">
+                    <input type="text" className="form-control input-register" value={email} onChange={e => {
                         setEmail(e.target.value);
                     }} onFocus={() => setUser(prevState => ({ ...prevState, email: false }))} />
                     <label htmlFor="floatingInput">E-mail</label>
@@ -144,7 +144,7 @@ export function RegisterUser() {
 
 
                 <div className="form-floating mb-4 div-input-register">
-                    <input type="password" className="form-control input-recovery" value={password} onChange={e => {
+                    <input type="password" className="form-control input-register" value={password} onChange={e => {
                         setPassword(e.target.value);
                     }} onFocus={() => setUser(prevState => ({ ...prevState, password: false }))} />
                     <label htmlFor="floatingInput">Senha</label>
@@ -159,7 +159,7 @@ export function RegisterUser() {
                 </div>
                 <Link
                     className='text-decoration-none text-blue mt-3 mb-5'
-                    to='/'>Já possui cadastro? Clique aqui para acessar!
+                    to='/login'>Já possui cadastro? Clique aqui para acessar!
                 </Link>
             </div>
         </main >

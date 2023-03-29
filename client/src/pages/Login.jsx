@@ -70,50 +70,31 @@ function Login() {
         setLoading(false);
       }
     }
-  }
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
-  };
-  return (
-    <main className="main-container">
-      <div className="div-img-login position-relative">
-        <img
-          className="img-logo position-absolute top-0 start-0"
-          src={Logotipo}
-        />
-        <img className="img-login" src={IlustLogin} />
-      </div>
-      <div className="div-info-recovery  text-center  align-items-center">
-        <h1 className="fw-bold title-recovery mb-5">Faça o seu login</h1>
+    const handleCheckboxChange = () => {
+        setIsChecked(!isChecked);
+    };
+    return (
+        <main className="main-container">
+            <div className="div-img-login position-relative">
 
-        <div className="form-floating mb-4 div-input-register">
-          <input
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            onFocus={() => {
-              setUser(false);
-            }}
-            type="email"
-            className="form-control input-recovery"
-          />
-          <label htmlFor="floatingInput">Email</label>
-        </div>
+                <img className="img-login" src={IlustLogin} />
+            </div>
+            <div className="div-info-login  text-center  align-items-center">
+                <h1 className="fw-bold title-login mb-5">Faça o seu login</h1>
 
-        <div className="form-floating mb-4 div-input-register">
-          <input
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            onFocus={() => {
-              setUser(false);
-            }}
-            type="password"
-            className="form-control input-recovery"
-          />
-          <label htmlFor="floatingInput">Senha</label>
-        </div>
+                <div className="form-floating mb-4 div-input-register">
+                    <input value={email} onChange={e => {
+                        setEmail(e.target.value);
+                    }} onFocus={() => { setUser(false) }} type="email" className="form-control input-login" />
+                    <label htmlFor="floatingInput">Email</label>
+                </div>
+
+                <div className="form-floating mb-4 div-input-register">
+                    <input onChange={e => {
+                        setPassword(e.target.value);
+                    }} onFocus={() => { setUser(false) }} type="password" className="form-control input-login" />
+                    <label htmlFor="floatingInput">Senha</label>
+                </div>
 
         <div
           className="d-flex flex-row flex-wrap justify-content-between"
@@ -134,24 +115,30 @@ function Login() {
         </div>
         {user && <p className="errInput">{user}</p>}
 
-        <div className="d-grid gap-2  div-btn-recovery">
-          {!loading ? (
-            <button
-              className="btn btn-login fw-bold"
-              type="button"
-              onClick={userAuthorization}
-            >
-              Entrar
-            </button>
-          ) : (
-            <Loading />
-          )}
-          <Link className="text-decoration-none text-blue mt-3" to="/register">
-            Ainda não tem uma conta? Cadastre-se aqui!
-          </Link>
-        </div>
-      </div>
-    </main>
-  );
+                <div className="d-flex flex-row flex-wrap justify-content-between" style={{ width: "80%" }}>
+                    <div className="form-check checkbox">
+                        <input type="checkbox" className="form-check-input checkbox2" checked={isChecked} onChange={handleCheckboxChange} />
+                        <label className="form-check-label">Lembrar Email</label>
+                    </div>
+                    <Link
+                        className='text-decoration-none text-blue'
+                        to='/recovery'
+                    >Esqueceu a Senha?
+                    </Link>
+                </div>
+                {user && <p className="errInput">{user}</p>}
+
+                <div className="d-grid gap-2  div-btn-login">
+                    {!loading ? <button className="btn btn-login fw-bold" type="button" onClick={userAuthorization}>Entrar</button> : <Loading />}
+                    <Link
+                        className='text-decoration-none text-blue mt-3'
+                        to='/register'
+                    >Ainda não tem uma conta? Cadastre-se aqui!
+                    </Link>
+                </div>
+            </div>
+
+        </main>
+    )
 }
 export default Login;
