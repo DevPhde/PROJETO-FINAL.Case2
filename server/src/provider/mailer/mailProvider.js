@@ -18,8 +18,8 @@ export class Mailer extends MailBuilder {
         })
     }
 
-    async sendMail( sub,status, identifier, message) {
-        const mailInfos = await this.ResponseMail(status, identifier, message);
+    async sendMail(sub,status, identifier, message, recipient) {
+        const mailInfos = await this.ResponseMail(status, identifier, message, recipient);
        
         try {
             this.transport.sendMail({

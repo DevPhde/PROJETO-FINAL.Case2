@@ -17,6 +17,7 @@ import { DeleteRevenuesController } from "../modules/revenues/deleteRevenue/cont
 import { UserInformationsController } from "../modules/user/dashboard/controller/userInformationsController.js";
 import { UserIRController } from "../modules/impostoDeRenda/controller/userIRController.js";
 import { AdminController } from "../modules/user/admin/controller/adminController.js";
+import { ContactController } from "../modules/contact/controller/contactController.js";
 
 export const router = Router();
 
@@ -47,13 +48,11 @@ router
     .put('/revenues/edit/:id', AuthMiddleware.authentication, EditRevenuesController.editRevenue)
     .delete('/revenues/delete/:id', AuthMiddleware.authentication, DeleteRevenuesController.deleteRevenue)
     .get('/user/IR', AuthMiddleware.authentication, UserIRController.calculateRevenue)
-
     .get('/admin/getUsers', AuthMiddleware.authentication, AdminController.listAllUsers)
     .get('/admin/deleteUser/:id', AuthMiddleware.authentication, AdminController.deleteUser)
     .post('/admin/new/article', AuthMiddleware.authentication, AdminController.createArticle)
-    .get('/admin/allArticles', AuthMiddleware.authentication, AdminController.listAllArticles)
     .put('/admin/edit/article/:id', AuthMiddleware.authentication, AdminController.articleEdit)
     .delete('/admin/delete/article/:id', AuthMiddleware.authentication, AdminController.articleDelete)
-    .get('/admin/article/:page', AuthMiddleware.authentication, AdminController.listFilteredArticles)
-
-    
+    .get('/article/:page', AdminController.listFilteredArticles)
+    .get('/allArticles', AdminController.listAllArticles)
+    .post('/contact',  ContactController.newContact)
