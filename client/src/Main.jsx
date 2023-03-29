@@ -11,6 +11,8 @@ import RevenuesList from './pages/RevenuesList';
 import ExpensesList from './pages/ExpensesList';
 import { FormContact } from './pages/FormContact';
 import { AdminDashboard } from './pages/AdminDashboard';
+import Home from './pages/Home';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -19,6 +21,18 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
+        element: <Home />
+      },
+      {
+        path: '/about',
+        element: <Login />
+      },
+      {
+        path: '/contact',
+        element: <Login />
+      },
+      {
+        path: '/login',
         element: <Login />
       },
       {
