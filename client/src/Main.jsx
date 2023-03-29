@@ -9,6 +9,7 @@ import Login from "./pages/Login"
 import { RegisterUser } from './pages/registerUser';
 import RevenuesList from './pages/RevenuesList';
 import ExpensesList from './pages/ExpensesList';
+import { FormContact } from './pages/FormContact';
 
 const router = createBrowserRouter([
   {
@@ -41,7 +42,10 @@ const router = createBrowserRouter([
       {
         path:'/dashboard/expenseslist',
         element: <ExpensesList/>
-
+      },
+      {
+        path:'/contact',
+        element: <FormContact/>
       }
     ]
   }
