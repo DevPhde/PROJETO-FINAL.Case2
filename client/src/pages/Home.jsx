@@ -112,7 +112,7 @@ function Home() {
                     <h2 className="text-center fw-medium">Nosso objetivo é ajudar você a realizar seus sonhos</h2>
                     <div className="cards-home-field text-center">
 
-                        <Card border="dark rounded-3" className="shadow-lg p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem', minHeight:'480px' }}>
+                        <Card border="dark rounded-3" className=" p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem', minHeight:'480px' }}>
                             <Card.Body>
                             <img src={Acess} className="icon-card-home mt-3"/>
                                 <Card.Title className="mb-3 mt-2">Acesso remoto</Card.Title>
@@ -122,7 +122,7 @@ function Home() {
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card border="dark rounded-3" className="shadow-lg p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem',minHeight:'480px' }}>
+                        <Card border="dark rounded-3" className=" p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem',minHeight:'480px' }}>
 
                             <Card.Body>
                                 <img src={Control} className="icon-card-home" />
@@ -134,7 +134,7 @@ function Home() {
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card border="dark rounded-3" className="shadow-lg p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem', minHeight:'480px' }}>
+                        <Card border="dark rounded-3" className=" p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem', minHeight:'480px' }}>
 
                             <Card.Body>
                             <img src={Analisys} className="icon-card-home" />
@@ -145,7 +145,7 @@ function Home() {
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card border="dark rounded-3" className="shadow-lg p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem',minHeight:'480px' }}>
+                        <Card border="dark rounded-3" className="p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem',minHeight:'480px' }}>
 
                             <Card.Body>
                             <img src={Security} className="icon-card-home" />
