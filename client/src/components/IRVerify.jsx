@@ -54,10 +54,10 @@ export function IRVerify(props) {
                         namebutton={'Fechar'}
                         message={
                             <>
-                                <h3>Olá, {user.name}! </h3>
-                                <p className='m-3'>Você está recebendo este aviso porque o nosso sistema detectou que a sua receita atual ultrapassou o valor mínimo de isenção do Imposto de Renda do ano vigente.
+                                <h4>Olá, {user.name}! </h4>
+                                <p className='my-3'>Você está recebendo este aviso porque o nosso sistema detectou que a sua receita atual ultrapassou o valor mínimo de isenção do Imposto de Renda do ano vigente.
 
-                                    Para a sua receita atual de R${formatValue(data.totalRevenues * 100)}, a alíquota é de {data.aliquot}%, com a dedução no valor de R${formatValue(data.deduct)}.
+                                    Para a sua receita atual de <span className="text-danger fw-medium">R${formatValue(data.totalRevenues * 100)}</span>, a alíquota é de <span className="text-danger fw-medium">{data.aliquot}%</span>, com a dedução no valor de <span className="text-danger fw-medium">R${formatValue(data.deduct)}</span>.
                                 </p>
                                 <p>É possível ver mais informações na tabela abaixo. Não se esqueça de fazer a sua declaração, e evite estresses com o leão! </p>
 
