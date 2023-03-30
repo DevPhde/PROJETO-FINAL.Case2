@@ -15,6 +15,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import FormContact from './pages/FormContact';
 import About from './pages/About';
+import OurTeam from './pages/OurTeam';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/ourteam',
-        element: <Login />
+        element: [<Header model="default" />, <OurTeam/>, <Footer/>]
       },
       {
         path: '/contact',
