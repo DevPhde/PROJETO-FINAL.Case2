@@ -17,7 +17,7 @@ export function IRVerify(props) {
             response.data.message.aliquot == 'Isento' ? setWarning(false) : setWarning(true);
         }
         verifyIR(sessionStorage.getItem('authorization'))
-    }, [])
+    })
 
     const formatValue = (value) => {
         if (value) {

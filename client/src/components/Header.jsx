@@ -48,7 +48,7 @@ if(model == "default"){
                  <Nav.Link href="/about" className='navbar-site fw-medium'>Sobre o SYM</Nav.Link>
                  <Nav.Link href="/ourteam" className='navbar-site fw-medium'>Nossa Equipe</Nav.Link>
                 <Nav.Link href="/contact" className='navbar-site fw-medium'>Fale Conosco</Nav.Link>
-                <Nav.Link href="/login" className='navbar-site fw-medium btn btn-outline-dark px-2'> Login</Nav.Link>
+                <Nav.Link href="/login" className='navbar-site fw-medium btn btn-outline-dark px-2 align-self-center' > Login</Nav.Link>
                   
                 </Nav>
               </Offcanvas.Body>

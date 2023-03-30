@@ -28,13 +28,11 @@ function TypeExpenseTable(props) {
         setData(response.data);
         setLoadingScreen(false);
       } catch (e) {
-        console.log(e);
         setLoadingScreen(false);
       }
     }
     getTypeExpenses();
   }, [update]);
-  console.log(data);
 
   const handleDelete = (i) => {
     setDeleting((prevState) => ({ ...prevState, delete: true, key: i.id }));
@@ -43,7 +41,6 @@ function TypeExpenseTable(props) {
   const handleDeleteRow = async () => {
     try {
       setLoadingReq(true);
-      console.log(deleting.key)
       const response = await AxiosProvider.communication("DELETE", `expenses/types/DELETE/${deleting.key}`);
       setFeedbackUser((prevState) => ({
         ...prevState,
@@ -66,7 +63,7 @@ setTimeout(() => {
     <div>
       {feedbackUser.message && (
         <BackdropModal
-          title="Erro interno"
+          title={feedbackUser.error ? "Erro interno" : "Mensagem"}
           message={feedbackUser.message}
           namebutton="Fechar"
         />

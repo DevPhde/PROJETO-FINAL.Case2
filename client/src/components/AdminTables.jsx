@@ -30,7 +30,6 @@ function AdminTables(props) {
     text: "",
     image: "",
   });
-
   const [isValid, setIsValid] = useState({
     title: true,
     text: true,
@@ -50,13 +49,11 @@ function AdminTables(props) {
         setData(response.data);
         setLoadingScreen(false);
       } catch (e) {
-        console.log(e);
         setLoadingScreen(false);
       }
     }
     getArticles(props.param);
   }, [update]);
-  console.log(data);
 
   const handleDelete = (i) => {
     setDeleting((prevState) => ({ ...prevState, delete: true, key: i.id }));
@@ -69,7 +66,6 @@ function AdminTables(props) {
       : (path = `admin/deleteUser/${deleting.key}`);
     try {
       setLoadingReq(true);
-      console.log(deleting.key)
       const response = await AxiosProvider.communication("DELETE", path, hash);
       setFeedbackUser((prevState) => ({
         ...prevState,
@@ -110,10 +106,11 @@ function AdminTables(props) {
           hash,
           data
         );
-        setMessage(response.data.message);
+        setFeedbackUser(prevState => ({...prevState, error: false, message: response.data.message}))
         setEditing((prevState) => ({ ...prevState, edit: false, key: 0 }));
         setLoadingReq(false);
       } catch (err) {
+        console.log(err)
         setFeedbackUser(prevState => ({ ...prevState, error: true, message: err.response.data.message}));
         setEditing((prevState) => ({ ...prevState, edit: false, key: 0 }));
         setLoadingReq(false);
@@ -123,15 +120,15 @@ function AdminTables(props) {
   };
   
 
-// setTimeout(() => {
-//   setUpdate(update + 1);
-// },2000)
+setTimeout(() => {
+  setUpdate(update + 1);
+},2000)
 
   return (
     <div>
       {feedbackUser.message && (
         <BackdropModal
-          title="Erro interno"
+          title={feedbackUser.error ? "Erro interno" : "Mensagem"}
           message={feedbackUser.message}
           namebutton="Fechar"
         />

@@ -1,7 +1,7 @@
 
 import '../style/home.css'
 import Carousel from 'react-bootstrap/Carousel'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Footer from "../components/Footer";
 import SavingMoney from "../components/SavingMoneyAnimation";
 import MakingMoney from "../components/MakingMoneyAnimation";
@@ -11,6 +11,7 @@ import Acess from '../images/access.png'
 import Analisys from '../images/analisys.png'
 import Control from '../images/control.png'
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -18,6 +19,12 @@ import { Link } from "react-router-dom";
 
 
 function Home() {
+const navigate = useNavigate();
+    useEffect(() => {
+        if(sessionStorage.getItem('authorization') && !sessionStorage.getItem('admin')){{
+            navigate('/dashboard')
+        }}
+    })
 
     const [index, setIndex] = useState(0);
 
@@ -68,7 +75,7 @@ function Home() {
 
                     <div className="img-home"><SavingMoney className="pigAnimation" /></div>
 
-                  
+
 
 
                 </div>
@@ -112,48 +119,48 @@ function Home() {
                     <h2 className="text-center fw-medium">Nosso objetivo é ajudar você a realizar seus sonhos</h2>
                     <div className="cards-home-field text-center">
 
-                        <Card border="dark rounded-3" className=" p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem', minHeight:'480px' }}>
+                        <Card border="dark rounded-3" className=" p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem', minHeight: '480px' }}>
                             <Card.Body>
-                            <img src={Acess} className="icon-card-home mt-3"/>
+                                <img src={Acess} className="icon-card-home mt-3" />
                                 <Card.Title className="mb-3 mt-2">Acesso remoto</Card.Title>
                                 <Card.Text>
-                                    Acesse onde estiver e quando quiser! Nosso aplicativo via web permite que o controle das finanças seja feito em qualquer lugar, a qualquer hora. 
+                                    Acesse onde estiver e quando quiser! Nosso aplicativo via web permite que o controle das finanças seja feito em qualquer lugar, a qualquer hora.
                                     Dessa forma, você consegue acompanhar suas finanças de forma constante e não precisa ficar preso a um único dispositivo.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card border="dark rounded-3" className=" p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem',minHeight:'480px' }}>
+                        <Card border="dark rounded-3" className=" p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem', minHeight: '480px' }}>
 
                             <Card.Body>
                                 <img src={Control} className="icon-card-home" />
                                 <Card.Title className="mb-3">Controle</Card.Title>
                                 <Card.Text>
-                                Com um SYM, é fácil acompanhar seus gastos e receitas ao longo do tempo. 
-                                Trabalhamos para ajudá-lo a entender onde seu dinheiro está indo e a identificar áreas onde você pode economizar. 
-                                O que ajuda a manter o controle sobre suas finanças e a tomar decisões mais seguras.
+                                    Com um SYM, é fácil acompanhar seus gastos e receitas ao longo do tempo.
+                                    Trabalhamos para ajudá-lo a entender onde seu dinheiro está indo e a identificar áreas onde você pode economizar.
+                                    O que ajuda a manter o controle sobre suas finanças e a tomar decisões mais seguras.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card border="dark rounded-3" className=" p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem', minHeight:'480px' }}>
+                        <Card border="dark rounded-3" className=" p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem', minHeight: '480px' }}>
 
                             <Card.Body>
-                            <img src={Analisys} className="icon-card-home" />
+                                <img src={Analisys} className="icon-card-home" />
                                 <Card.Title className="mb-3">Facilidade na análise financeira</Card.Title>
                                 <Card.Text>
-                                Com o SYM, é possível gerar relatórios e gráficos que permitem uma análise detalhada das suas finanças. 
-                                É possível identificar tendências, comparar receitas e despesas de diferentes períodos e tomar decisões financeiras mais informadas.
+                                    Com o SYM, é possível gerar relatórios e gráficos que permitem uma análise detalhada das suas finanças.
+                                    É possível identificar tendências, comparar receitas e despesas de diferentes períodos e tomar decisões financeiras mais informadas.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card border="dark rounded-3" className="p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem',minHeight:'480px' }}>
+                        <Card border="dark rounded-3" className="p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem', minHeight: '480px' }}>
 
                             <Card.Body>
-                            <img src={Security} className="icon-card-home" />
+                                <img src={Security} className="icon-card-home" />
                                 <Card.Title className="mb-3">Segurança</Card.Title>
                                 <Card.Text>
-                                Nosso aplicativo prioriza as suas informações financeiras. 
-                                Por isso trabalhamos com recursos de segurança avançados para dua proteção, 
-                                isso inclui criptografia de dados e outras medidas de segurança para garantir que suas informações sejam mantidas em sigilo.
+                                    Nosso aplicativo prioriza as suas informações financeiras.
+                                    Por isso trabalhamos com recursos de segurança avançados para dua proteção,
+                                    isso inclui criptografia de dados e outras medidas de segurança para garantir que suas informações sejam mantidas em sigilo.
                                 </Card.Text>
                             </Card.Body>
                         </Card>

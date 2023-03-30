@@ -38,7 +38,6 @@ export function CreateArticleModal(props) {
                 setFeedbackUser(prevState => ({ ...prevState, message: response.data.message }))
 
             } catch (e) {
-                console.log(e)
                 setFeedbackUser(prevState => ({ ...prevState, error: true, message: e.response.data.message }))
             }
         }
@@ -49,7 +48,6 @@ export function CreateArticleModal(props) {
         setValues(prevState => ({...prevState, title: '', text: '', image: ''}))
         setIsValid(prevState => ({...prevState, title: true, text: true}))
     },[props.status])
-console.log(values)
     return (
         <div>
             {feedbackUser.message &&  <BackdropModal

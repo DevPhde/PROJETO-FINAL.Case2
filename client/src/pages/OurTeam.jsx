@@ -12,27 +12,28 @@ import Indiane from '../images/indiane.jpeg'
 import Orlando from '../images/orlando.jpeg'
 import Paloma from '../images/paloma.jpeg'
 import BarChart from '../components/BarChart';
-
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 function OurTeam() {
 
-
+    const navigate = useNavigate();
+    useEffect(() => {
+        if(sessionStorage.getItem('authorization') && !sessionStorage.getItem('admin')){{
+            navigate('/dashboard')
+        }}
+    })
     const [article, setArticle] = useState({})
 
     const getArticle = async () => {
         try {
             const response = await AxiosProvider.communication('GET', 'allArticles')
-            console.log(response.data.message[9])
             setArticle(response.data.message[9])
-
-
         } catch (err) {
             console.log(err)
         }
-
     }
 
     useEffect(() => {
