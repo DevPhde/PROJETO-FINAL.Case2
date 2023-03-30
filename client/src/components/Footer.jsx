@@ -18,9 +18,10 @@ function Footer() {
                     <h4> Mapa do site</h4>
                     <ul>
                         <Link to="/" className="link-footer"><li>Início</li></Link>
-                        <Link to="/about" className="link-footer"> <li>Sobre</li></Link>
-                        <Link to="/login" className="link-footer"><li>Funcionalidades</li></Link>
+                        <Link to="/about" className="link-footer"> <li>Sobre o SYM</li></Link>
+                        <Link to="/ourteam" className="link-footer"> <li>Nossa Equipe</li></Link>                       
                         <Link to="/contact" className="link-footer"><li>Fale Conosco</li></Link>
+                        <Link to="/login" className="link-footer"><li>Login</li></Link>
                     </ul>
                 </div>
                 <div className="text-center">

@@ -29,6 +29,10 @@ const router = createBrowserRouter([
         element: <Login />
       },
       {
+        path: '/ourteam',
+        element: <Login />
+      },
+      {
         path: '/contact',
         element: [<Header model="default" />, <FormContact/>, <Footer/>]
       },
