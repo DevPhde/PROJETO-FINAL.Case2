@@ -9,8 +9,12 @@ import Login from "./pages/Login"
 import { RegisterUser } from './pages/registerUser';
 import RevenuesList from './pages/RevenuesList';
 import ExpensesList from './pages/ExpensesList';
-import { FormContact } from './pages/FormContact';
 import { AdminDashboard } from './pages/AdminDashboard';
+import Home from './pages/Home';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import FormContact from './pages/FormContact';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -19,15 +23,27 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
+        element: [<Header model="default" />, <Home/>, <Footer/>]
+      },
+      {
+        path: '/about',
         element: <Login />
       },
       {
+        path: '/contact',
+        element: <Login />
+      },
+      {
+        path: '/login',
+        element: [<Header model="default" />, <Login/>, <Footer/>]
+      },
+      {
         path: '/register',
-        element: <RegisterUser/>
+        element: [<Header model="default" />, <RegisterUser/>, <Footer/>]
       },
       {
         path: '/recovery',
-        element: <RecoveryPasswordPage />
+        element:[<Header model="default" />, <RecoveryPasswordPage/>, <Footer/>]
       },
       {
         path:'/dashboard',
@@ -46,10 +62,6 @@ const router = createBrowserRouter([
       {
         path:'/contact',
         element: <FormContact/>
-      },
-      {
-        path:'/admin',
-        element: <AdminDashboard/>
       }
     ]
   }
