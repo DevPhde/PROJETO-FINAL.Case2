@@ -9,6 +9,7 @@ function JwtValidator() {
 
   useEffect(() => {
     if (sessionStorage.getItem('authorization')) {
+      
       const hash = sessionStorage.getItem('authorization')
       async function jwtValidator() {
         try {
@@ -32,7 +33,7 @@ function JwtValidator() {
       sessionStorage.clear()
       navigate('/')
     }
-  }, [])
+  })
 
   return isValid
 }

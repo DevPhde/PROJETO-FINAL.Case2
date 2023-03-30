@@ -89,7 +89,7 @@ function ExpensesList() {
 
     setTimeout(() => {
         setUpdate(update + 1)
-    }, 5000)
+    }, 2000)
 
     useEffect(() => {
         getInfo();

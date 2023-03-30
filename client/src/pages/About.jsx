@@ -17,11 +17,20 @@ import Versatile from '../images/versatil.png'
 import Informative from '../images/informativo.png'
 import { AxiosProvider } from '../providers/axiosProvider';
 import { Loading } from '../components/Loading';
-
+import { useNavigate } from 'react-router-dom';
 
 
 
 function About() {
+
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (sessionStorage.getItem('authorization') && !sessionStorage.getItem('admin')) {
+            {
+                navigate('/dashboard')
+            }
+        }
+    })
 
     const [article, setArticle] = useState([])
 
@@ -96,7 +105,7 @@ function About() {
                                     <div>
                                         <Card.Title className="text-card-about">{article[4].title}</Card.Title>
                                         <Card.Text className="text-card-about">
-                                        {article[4].text}
+                                            {article[4].text}
                                         </Card.Text>
                                     </div>
 
@@ -109,8 +118,8 @@ function About() {
                                     <div>
                                         <Card.Title className="text-card-about">{article[5].title}</Card.Title>
                                         <Card.Text className="text-card-about">
-                                        {article[5].text}
-                                           </Card.Text>
+                                            {article[5].text}
+                                        </Card.Text>
                                     </div>
                                 </Card.Body>
                             </Card>
@@ -122,7 +131,7 @@ function About() {
                                     <div>
                                         <Card.Title className="text-card-about">{article[6].title}</Card.Title>
                                         <Card.Text className="text-card-about">
-                                        {article[6].text}
+                                            {article[6].text}
                                         </Card.Text>
                                     </div>
 
@@ -135,7 +144,7 @@ function About() {
                                     <div>
                                         <Card.Title className="text-card-about">{article[7].title}</Card.Title>
                                         <Card.Text className="text-card-about">
-                                        {article[7].text}
+                                            {article[7].text}
                                         </Card.Text>
                                     </div>
 
@@ -148,7 +157,7 @@ function About() {
                                     <div>
                                         <Card.Title className="text-card-about">{article[8].title}</Card.Title>
                                         <Card.Text className="text-card-about">
-                                        {article[8].text}
+                                            {article[8].text}
                                         </Card.Text>
                                     </div>
                                 </Card.Body>
