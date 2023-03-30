@@ -69,7 +69,7 @@ function Login() {
         setUser(e.response.data.message);
         setLoading(false);
       }
-    }
+    }}
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
     };
@@ -96,24 +96,7 @@ function Login() {
                     <label htmlFor="floatingInput">Senha</label>
                 </div>
 
-        <div
-          className="d-flex flex-row flex-wrap justify-content-between"
-          style={{ width: "80%" }}
-        >
-          <div className="form-check checkbox">
-            <input
-              type="checkbox"
-              className="form-check-input checkbox2"
-              checked={isChecked}
-              onChange={handleCheckboxChange}
-            />
-            <label className="form-check-label">Lembrar Email</label>
-          </div>
-          <Link className="text-decoration-none text-blue" to="/recovery">
-            Esqueceu a Senha?
-          </Link>
-        </div>
-        {user && <p className="errInput">{user}</p>}
+
 
                 <div className="d-flex flex-row flex-wrap justify-content-between" style={{ width: "80%" }}>
                     <div className="form-check checkbox">
