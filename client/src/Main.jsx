@@ -34,15 +34,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/login',
-        element: <Login />
+        element: [<Header model="default" />, <Login/>, <Footer/>]
       },
       {
         path: '/register',
-        element: <RegisterUser/>
+        element: [<Header model="default" />, <RegisterUser/>, <Footer/>]
       },
       {
         path: '/recovery',
-        element: <RecoveryPasswordPage />
+        element:[<Header model="default" />, <RecoveryPasswordPage/>, <Footer/>]
       },
       {
         path:'/dashboard',

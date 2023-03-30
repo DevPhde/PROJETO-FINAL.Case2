@@ -56,23 +56,23 @@ function Login() {
     return (
         <main className="main-container">
             <div className="div-img-login position-relative">
-                <img className="img-logo position-absolute top-0 start-0" src={Logotipo} />
+
                 <img className="img-login" src={IlustLogin} />
             </div>
-            <div className="div-info-recovery  text-center  align-items-center">
-                <h1 className="fw-bold title-recovery mb-5">Faça o seu login</h1>
+            <div className="div-info-login  text-center  align-items-center">
+                <h1 className="fw-bold title-login mb-5">Faça o seu login</h1>
 
                 <div className="form-floating mb-4 div-input-register">
                     <input value={email} onChange={e => {
                         setEmail(e.target.value);
-                    }} onFocus={() => { setUser(false) }} type="email" className="form-control input-recovery" />
+                    }} onFocus={() => { setUser(false) }} type="email" className="form-control input-login" />
                     <label htmlFor="floatingInput">Email</label>
                 </div>
 
                 <div className="form-floating mb-4 div-input-register">
                     <input onChange={e => {
                         setPassword(e.target.value);
-                    }} onFocus={() => { setUser(false) }} type="password" className="form-control input-recovery" />
+                    }} onFocus={() => { setUser(false) }} type="password" className="form-control input-login" />
                     <label htmlFor="floatingInput">Senha</label>
                 </div>
 
@@ -90,7 +90,7 @@ function Login() {
                 </div>
                 {user && <p className="errInput">{user}</p>}
 
-                <div className="d-grid gap-2  div-btn-recovery">
+                <div className="d-grid gap-2  div-btn-login">
                     {!loading ? <button className="btn btn-login fw-bold" type="button" onClick={userAuthorization}>Entrar</button> : <Loading />}
                     <Link
                         className='text-decoration-none text-blue mt-3'
