@@ -63,7 +63,7 @@ setTimeout(() => {
     <div>
       {feedbackUser.message && (
         <BackdropModal
-          title="Erro interno"
+          title={feedbackUser.error ? "Erro interno" : "Mensagem"}
           message={feedbackUser.message}
           namebutton="Fechar"
         />
