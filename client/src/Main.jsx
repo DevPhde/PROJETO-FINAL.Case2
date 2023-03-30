@@ -9,7 +9,7 @@ import Login from "./pages/Login"
 import { RegisterUser } from './pages/registerUser';
 import RevenuesList from './pages/RevenuesList';
 import ExpensesList from './pages/ExpensesList';
-import { AdminDashboard } from './pages/AdminDashboard';
+import AdminDashboard from './pages/AdminDashboard';
 import Home from './pages/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -63,7 +63,12 @@ const router = createBrowserRouter([
         path:'/dashboard/expenseslist',
         element: <ExpensesList/>
 
-      }
+      },
+      {
+        path:'/admin',
+        element: [<Header model="logged" />, <AdminDashboard/>, <Footer/>]
+
+      },
     ]
   }
 ])
