@@ -30,8 +30,12 @@ const router = createBrowserRouter([
         element: <Login />
       },
       {
-        path: '/contact',
+        path: '/ourteam',
         element: <Login />
+      },
+      {
+        path: '/contact',
+        element: [<Header model="default" />, <FormContact/>, <Footer/>]
       },
       {
         path: '/login',
@@ -58,10 +62,7 @@ const router = createBrowserRouter([
       {
         path:'/dashboard/expenseslist',
         element: <ExpensesList/>
-      },
-      {
-        path:'/contact',
-        element: <FormContact/>
+
       }
     ]
   }
