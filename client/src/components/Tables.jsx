@@ -270,9 +270,7 @@ export function Tables(props) {
                                             <td className="text-center"><button onClick={() => handleEdit(info)} type="button" className="btn ms-1 p-1 px-2 btn-success">Editar</button>
                                                 <button onClick={() => handleDelete(info)} type="button" className="btn ms-1 p-1 btn-danger">Deletar</button></td>
                                         </tr>
-
                                     </tbody>
-
                                 ))}
                             </Table>
                         </div>) : (<div>

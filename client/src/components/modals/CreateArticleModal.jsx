@@ -24,7 +24,7 @@ export function CreateArticleModal(props) {
     })
 
     const handleCreateArticle = async () => {
-        loadingReq(true)
+        setLoadingReq(true)
         setFeedbackUser(prevState => ({ ...prevState, error: false, message: "" }))
         if (!values.title) {
             setIsValid(prevState => ({ ...prevState, title: false }))
@@ -33,12 +33,8 @@ export function CreateArticleModal(props) {
             setIsValid(prevState => ({ ...prevState, text: false }))
         }
         else if (Object.values(isValid).every(value => value == true)) {
-
             try {
-                console.log(hash)
-                console.log(values)
                 const response = await AxiosProvider.communication('POST', 'admin/new/article', hash, values)
-                console.log(response)
                 setFeedbackUser(prevState => ({ ...prevState, message: response.data.message }))
 
             } catch (e) {
@@ -46,8 +42,13 @@ export function CreateArticleModal(props) {
                 setFeedbackUser(prevState => ({ ...prevState, error: true, message: e.response.data.message }))
             }
         }
-        loadingReq(false)
+        setLoadingReq(false)
     }
+
+    useEffect(() => {
+        setValues(prevState => ({...prevState, title: '', text: '', image: ''}))
+        setIsValid(prevState => ({...prevState, title: true, text: true}))
+    },[props.status])
 
     return (
         <div>

@@ -211,9 +211,6 @@ export function CreateItemModal(props) {
                                                         ))}
                                                     </Form.Select>
                                                 </FloatingLabel>
-
-
-
                                             ) : (<div><Loading /></div>)
                                             }
                                         </section>

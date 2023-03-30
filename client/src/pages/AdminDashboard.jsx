@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Articles from '../components/Articles'
+import AdminTables from '../components/AdminTables'
 import { CreateArticleModal } from '../components/modals/CreateArticleModal'
 
 export function AdminDashboard() {
@@ -14,10 +14,15 @@ export function AdminDashboard() {
       <CreateArticleModal
         showModal={showCreateArticleModal}
         hideModal={() => setShowCreateArticleModal(false)}
+        status={showCreateArticleModal}
       />
-      <Articles param="allArticles"/>
-
+      <AdminTables param="allArticles"/>
 
     </div>
   )
 }
+
+
+
+//allArticles
+//getUsers
