@@ -14,6 +14,7 @@ import { Navigate, useNavigate } from "react-router-dom"
 
 
 function Dashboard() {
+    const navigate = useNavigate()
     const hash = sessionStorage.getItem('authorization')
     const [totalValues, setTotalValues] = useState([])
     const [userInfo, setUserInfo] = useState([])
@@ -25,9 +26,11 @@ function Dashboard() {
     const [dataBarChartRevenues, setDataBarChartRevenues] = useState(false)
     const [dataLineChart, setDataLineChart] = useState(false)
     const [lineChart, setLineChart] = useState([])
+    
+    if(sessionStorage.getItem('admin')){
+        navigate('/admin')
+    }
 
-
-    const navigate = useNavigate()
 
     const isValid = JwtValidator()
     if (!isValid) {

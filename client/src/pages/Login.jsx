@@ -1,54 +1,74 @@
 import { useState, useEffect } from "react";
-import '../style/Login.css';
+import "../style/Login.css";
 import { useNavigate, Link } from "react-router-dom";
 import { AxiosProvider } from "../providers/axiosProvider";
-import Logotipo from "../images/logo5.png"
-import IlustLogin from "../images/ilust4.png"
+import Logotipo from "../images/logo5.png";
+import IlustLogin from "../images/ilust4.png";
 import { BackdropModal } from "../components/modals/BackdropModal";
 import { Loading } from "../components/Loading";
 
 function Login() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState();
-    const [isChecked, setIsChecked] = useState(false);
-    const navigate = useNavigate();
-    const [loading, setLoading] = useState(false)
-    useEffect(() => {
-        let emailRemember = localStorage.getItem('email');
-        if (emailRemember) {
-            setEmail(emailRemember);
-            setIsChecked(true)
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState();
+  const [isChecked, setIsChecked] = useState(false);
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    let emailRemember = localStorage.getItem("email");
+    if (emailRemember) {
+      setEmail(emailRemember);
+      setIsChecked(true);
+    }
+    if (sessionStorage.getItem("authorization")) {
+      if (sessionStorage.getItem("admin")) {
+        return navigate("/admin");
+      }
+      navigate("/dashboard");
+    }
+  }, []);
+  const [user, setUser] = useState("");
+
+  async function userAuthorization() {
+    isChecked
+      ? localStorage.setItem("email", email)
+      : localStorage.setItem("email", "");
+    setLoading(true);
+
+    try {
+      const response = await AxiosProvider.communication(
+        "POST",
+        "user/authorization",
+        null,
+        { email: email, password: password }
+      );
+
+      if (response.status == 200) {
+        const hash = response.data.message;
+        if (response.data.admin) {
+          console.log(response.message);
+          sessionStorage.setItem("admin", true);
+          navigate("/admin");
+          setLoading(false);
         }
-        if (sessionStorage.getItem('authorization')) {
-            navigate("/dashboard");
-        }
-
-    }, []);
-    const [user, setUser] = useState("")
-
-    async function userAuthorization() {
-        isChecked ? localStorage.setItem('email', email) : localStorage.setItem('email', "")
-        setLoading(true)
-
-        try {
-            const response = await AxiosProvider.communication('POST', 'user/authorization', null, { email: email, password: password })
-
-            if (response.status == 200) {
-                const hash = response.data.message;
-                sessionStorage.setItem('authorization', hash)
-                navigate("/dashboard");
-                setLoading(false)
-            }
-        } catch (e) {
-            if (e.response.status == 500) {
-                <BackdropModal title={"Erro Interno"} message={e.response.data.message} to={null} namebutton={"Fechar"} />
-                setLoading(false)
-            }
-            if (e.response.status == 401) {
-                setUser(e.response.data.message);
-                setLoading(false)
-            }
-        }
+        sessionStorage.setItem("authorization", hash);
+        navigate("/dashboard");
+        setLoading(false);
+      }
+    } catch (e) {
+      console.log(e);
+      if (e.response.status == 500) {
+        <BackdropModal
+          title={"Erro Interno"}
+          message={e.response.data.message}
+          to={null}
+          namebutton={"Fechar"}
+        />;
+        setLoading(false);
+      }
+      if (e.response.status == 401) {
+        setUser(e.response.data.message);
+        setLoading(false);
+      }
     }
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
@@ -76,6 +96,24 @@ function Login() {
                     <label htmlFor="floatingInput">Senha</label>
                 </div>
 
+        <div
+          className="d-flex flex-row flex-wrap justify-content-between"
+          style={{ width: "80%" }}
+        >
+          <div className="form-check checkbox">
+            <input
+              type="checkbox"
+              className="form-check-input checkbox2"
+              checked={isChecked}
+              onChange={handleCheckboxChange}
+            />
+            <label className="form-check-label">Lembrar Email</label>
+          </div>
+          <Link className="text-decoration-none text-blue" to="/recovery">
+            Esqueceu a Senha?
+          </Link>
+        </div>
+        {user && <p className="errInput">{user}</p>}
 
                 <div className="d-flex flex-row flex-wrap justify-content-between" style={{ width: "80%" }}>
                     <div className="form-check checkbox">
@@ -103,4 +141,4 @@ function Login() {
         </main>
     )
 }
-export default Login
+export default Login;

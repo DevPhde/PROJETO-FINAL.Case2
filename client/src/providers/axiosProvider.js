@@ -6,6 +6,7 @@ export class AxiosProvider{
             const options = {
                 method: method,
                 url: `https://server-final-project-12ki.onrender.com/${path}`,
+                // url: `http://localhost:3000/${path}`,
                 headers: {
                   'Content-Type': 'application/json',
                   authorization: hash

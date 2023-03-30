@@ -6,13 +6,13 @@ import LGasto from "../images/list-gasto.png"
 import Help from "../images/help.png"
 import Settings from "../images/settings.png"
 import { useState } from "react"
-import '../style/navbar.css'
+import "../style/navbar.css"
 import "../style/modal.css"
 import { VerticalModal } from "./modals/VerticalModal"
 import { IRVerify } from "./IRVerify"
 import { Link } from "react-router-dom"
-import { EditProfile } from "./EditProfile"
-import CreateItemModal from "./CreateItemModal"
+import { EditProfile } from "./modals/EditProfile"
+import {CreateItemModal} from "./modals/CreateItemModal"
 
 function Navbar() {
     const [showModalHelp, setShowModalHelp] = useState(false)
