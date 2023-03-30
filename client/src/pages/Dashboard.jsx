@@ -33,9 +33,7 @@ function Dashboard() {
 
 
     const isValid = JwtValidator()
-    if (!isValid) {
-
-    }
+    
 
     const getTotal = async () => {
         try {
@@ -235,7 +233,7 @@ function Dashboard() {
 
     setTimeout(() => {
         setUpdate(update + 1)
-    }, 5000)
+    }, 2000)
     
     useEffect(() => {
         getDataChart();

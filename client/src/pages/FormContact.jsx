@@ -1,14 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Loading } from '../components/Loading';
 import { AxiosProvider } from '../providers/axiosProvider';
 import "../style/contact.css";
-
 import { BackdropModal } from '../components/modals/BackdropModal';
-
-import Logotipo from "../images/logo5.png"
+import { useNavigate } from 'react-router-dom';
 import ilustContact from "../images/ilust3.png"
 
 function FormContact() {
+    const navigate = useNavigate();
+    useEffect(() => {
+        if(sessionStorage.getItem('authorization') && !sessionStorage.getItem('admin')){{
+            navigate('/dashboard')
+        }}
+    })
+
     const [values, setValues] = useState({
         name: "",
         email: "",

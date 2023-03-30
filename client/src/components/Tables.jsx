@@ -134,6 +134,7 @@ export function Tables(props) {
         
         getInfos(props.param)
     }, [update])
+
     if (props.param == 'expenses') {
         useEffect(() => {
             async function getTypeExpenses() {
