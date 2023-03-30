@@ -28,11 +28,6 @@ function About() {
     return (
 
         <div className="background">
-
-
-
-
-
             <main className="main-home">
                 <div className="about-first-part">
 
@@ -43,48 +38,22 @@ function About() {
                         <p className=" text-about ">O SYM(Save Your Money) é uma aplicação web de gerenciamento de finanças. Nele você consegue acompanhar suas finanças de perto e em tempo real. No SYM você consegue adicionar, editar e excluir despesas e receitas de forma rápida e sem complicação.
                             <br/>Nossa aplicação conta com uma interface simplificada, dinâmica e intuitiva. Através dos gráficos apresentados no dashboard, você consegue fazer uma análise mais assertiva de seus ganhos e suas perdas,
                             permitindo que o usuário possa identificar. com mais clareza oportunidades de economizar dinheiro.
-
-
                         </p>
-
                     </div>
-
-
                     <div className="img-about"><WhatIsIt /></div>
-
-
-
-
                 </div>
                 <div className="about-second-part">
-
-
-
                     < div className="img-home-sp">
-
                         <img src={Lion} className="img-lion" />
                     </div>
-
-
-
                     <div className="home-sp-text-field ">
-
                         <p className="text-about">
-
                             Além disso, o SYM também conta com um sistema de alerta sobre o Imposto de Renda, para que você não se esqueça e tenha problemas com o leão. Sempre que o usuário alcançar a receita mínima para a declaração IR, nossa aplicação o informará dessa necessidade, assim como a alíquota para dedução.<br />
                             Finalmente, o SYM existe para lhe ajudar no controle de orçamento pessoal. Nosso objetivo é reduzir o seu estresse financeiro ao mesmo tempo em que lhe proporcionamos meios para você tenha um controle claro e preciso das suas finanças, para que possa tomar decisões financeiras com segurança, e assim, alcançar suas metas e sonhos.
                         </p>
-
                     </div>
-
-
-
-
-
                 </div>
-
                 <div className="home-third-part">
-
                     <h1 className="text-center fw-bolder" style={{ color: "#048A78", fontSize: "clamp(35px,5vw,45px)" }}> Um pouco mais sobre o SYM</h1>
                     <h2 className="text-center fw-medium">Conheça um pouco de nossas principais características</h2>
                   
@@ -98,9 +67,7 @@ function About() {
                                 <Card.Text  className="text-card-about">
                                 Apresenta uma interface simples e limpa, para que todo e qualquer usuário consiga entender sem dificuldades e gerenciar suas finanças com extrema facilidade.
                                 </Card.Text>
-                                </div>
-
-                                
+                                </div>        
                             </Card.Body>
                         </Card>
                         <Card className='mb-3 c-about'>
@@ -110,11 +77,8 @@ function About() {
                                 <Card.Title className="text-card-about">Dinâmico</Card.Title>
                                 <Card.Text  className="text-card-about">
                                 Os gráficos presentes na dashboard são atualizados em tempo real! Quando alteração é realizada, é possível visualiza-la instantaneamente no dashboard!
-
                                 </Card.Text>
-                                </div>
-
-                                
+                                </div>    
                             </Card.Body>
                         </Card >
                         <Card className='mb-3 c-about three-line'>
@@ -137,11 +101,8 @@ function About() {
                                 <Card.Title className="text-card-about">Prático</Card.Title>
                                 <Card.Text  className="text-card-about">
                                 No SYM você consegue gerenciar suas despesas de forma rápida e segura, para que você gaste menos tempo preenchendo planilha, e mais tempo vivendo.  
-
                                 </Card.Text>
-                                </div>
-
-                                
+                                </div> 
                             </Card.Body>
                         </Card>
                         <Card className='mb-3 c-about three-line'>
@@ -153,9 +114,7 @@ function About() {
                                 Sendo uma aplicação para web, você consegue acessar o SYM através de qualquer aplicativo com acesso a internet, 
                                 assim você não precisa ficar preso a um único dispositivo.
                                 </Card.Text>
-                                </div>
-
-                                
+                                </div>        
                             </Card.Body>
                         </Card >
                         <Card className='mb-3 c-about two-line'>
@@ -169,28 +128,12 @@ function About() {
                                 </div>
                             </Card.Body>
                         </Card>
-                        </div>
-
-
-
-                          
+                        </div>      
                     </div>
-
-
-
-
                 </div>
-
-
-
-
             </main>
         </div>
-
-
-
     )
-
 }
 
 export default About

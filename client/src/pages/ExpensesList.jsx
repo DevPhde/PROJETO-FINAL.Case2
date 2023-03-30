@@ -55,7 +55,6 @@ function ExpensesList() {
         try {
             const res = await AxiosProvider.communication('GET', 'user/informations', hash)
             setUserInfo(res.data.message.name.split(' '))
-
         } catch (err) {
             console.log(err)
         }

@@ -25,14 +25,10 @@ function OurTeam() {
     const getArticle = async () => {
         try {
             const response = await AxiosProvider.communication('GET', 'allArticles')
-            console.log(response.data.message[9])
             setArticle(response.data.message[9])
-
-
         } catch (err) {
             console.log(err)
         }
-
     }
 
     useEffect(() => {
