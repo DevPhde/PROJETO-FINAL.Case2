@@ -36,6 +36,7 @@ export class AdminUseCases extends DeleteUserUseCases {
 
     static async newArticle(data) {
         try {
+            console.log(data)
             await this.articleDbRepositories.create(data)
             return new Response(true, "Artigo criado com sucesso!")
         } catch {

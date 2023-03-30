@@ -1,5 +1,4 @@
 import { ContactUseCases } from "../useCases/contactUseCases.js";
-import { Mailer } from "../../../provider/mailer/mailProvider.js";
 
 export class ContactController extends ContactUseCases {
 

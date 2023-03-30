@@ -49,7 +49,7 @@ router
     .delete('/revenues/delete/:id', AuthMiddleware.authentication, DeleteRevenuesController.deleteRevenue)
     .get('/user/IR', AuthMiddleware.authentication, UserIRController.calculateRevenue)
     .get('/admin/getUsers', AuthMiddleware.authentication, AdminController.listAllUsers)
-    .get('/admin/deleteUser/:id', AuthMiddleware.authentication, AdminController.deleteUser)
+    .delete('/admin/deleteUser/:id', AuthMiddleware.authentication, AdminController.deleteUser)
     .post('/admin/new/article', AuthMiddleware.authentication, AdminController.createArticle)
     .put('/admin/edit/article/:id', AuthMiddleware.authentication, AdminController.articleEdit)
     .delete('/admin/delete/article/:id', AuthMiddleware.authentication, AdminController.articleDelete)

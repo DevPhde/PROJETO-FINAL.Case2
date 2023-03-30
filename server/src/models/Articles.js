@@ -15,10 +15,6 @@ export const Article = sequelize.define('Article', {
     type: DataTypes.STRING,
     allowNull:false
   },
-  page: {
-    type: DataTypes.STRING,
-    allowNull:false
-  },
   image: {
     type: DataTypes.STRING
   }

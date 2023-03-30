@@ -41,5 +41,4 @@ export class ContactUseCases {
             new ResponseError('CUC 42L')
         }
     }
-
 }

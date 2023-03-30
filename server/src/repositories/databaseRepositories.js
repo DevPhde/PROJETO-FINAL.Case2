@@ -3,7 +3,7 @@ import { Expense } from "../models/Expense.js";
 import { TypeExpense } from "../models/TypeExpense.js";
 import { Revenue } from "../models/Revenue.js";
 import { Article } from "../models/Articles.js";
-
+import sequelize from "../db/dbConfig.js";
 
 export class BaseModel {
   constructor(table) {
@@ -52,7 +52,12 @@ export class BaseModel {
 
 
   async create(data) {
-    return await this.table.create(data);
+    try {
+      return await this.table.create(data);
+
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   async update(data, param) {
