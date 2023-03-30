@@ -5,8 +5,8 @@ export class AxiosProvider{
         try {
             const options = {
                 method: method,
-                url: `https://server-final-project-12ki.onrender.com/${path}`,
-                // url: `http://localhost:3000/${path}`,
+                // url: `https://server-final-project-12ki.onrender.com/${path}`,
+                url: `http://localhost:3000/${path}`,
                 headers: {
                   'Content-Type': 'application/json',
                   authorization: hash
@@ -17,6 +17,5 @@ export class AxiosProvider{
         } catch (err) {
             return err.response
         }   
-
     }
 }
