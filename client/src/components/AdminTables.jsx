@@ -123,9 +123,9 @@ function AdminTables(props) {
   };
   
 
-setTimeout(() => {
-  setUpdate(update + 1);
-},2000)
+// setTimeout(() => {
+//   setUpdate(update + 1);
+// },2000)
 
   return (
     <div>

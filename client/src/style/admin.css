@@ -54,7 +54,13 @@
     color: white;
 }
 
-
-@media (max-width: 600px){
+.span-admin{
+    color: #0a81c4;
+    cursor: pointer;
 
 }
+
+.span-admin:hover{
+    text-decoration: underline;
+}
+

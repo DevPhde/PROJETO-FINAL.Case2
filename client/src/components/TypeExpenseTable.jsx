@@ -58,12 +58,9 @@ function TypeExpenseTable(props) {
     }
   };
 
-  
-  
-
-// setTimeout(() => {
-//   setUpdate(update + 1);
-// },2000)
+setTimeout(() => {
+  setUpdate(update + 1);
+},2000)
 
   return (
     <div>
@@ -113,7 +110,7 @@ function TypeExpenseTable(props) {
                   {data.message.map((info) => (
                     <tbody key={info.id}>
                       <tr>
-                      <td>{info.name}</td>
+                      <td className="text-capitalize">{info.name}</td>
                         <td className="text-center">
                           <button
                             onClick={() => handleDelete(info)}

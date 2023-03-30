@@ -47,12 +47,10 @@ export function CreateItemModal(props) {
         if (value === "0") {
             value += ",";
         }
-
-        return decimal
+        console.log(decimal)
+        console.log(Number(values.amount.replace(/\./g, "").replace(",", "")* 100))
+        return decimal 
     }
-
-
-
     const handleCreateItem = async () => {
 
 
@@ -77,11 +75,11 @@ export function CreateItemModal(props) {
                 const data = {
                     date: values.date,
                     name: values.name,
-                    amount: Number(values.amount.replace(/\./g, "").replace(",", ""))
+                    amount: Number(values.amount.replace(/\./g, "").replace(",", "") / 100)
                 }
                 if (type == "expense") {
                     data.local = values.local,
-                    data.TypeExpenseId = selectedOption.id
+                        data.TypeExpenseId = selectedOption.id
                 }
                 setLoadingReq(true)
                 const response = await AxiosProvider.communication("POST", `new/${type}`, hash, data)
@@ -92,7 +90,7 @@ export function CreateItemModal(props) {
 
             } catch (e) {
                 setLoadingReq(false)
-                (e)
+                    (e)
                 setReqError(e.response.data.message)
             }
         }
@@ -141,7 +139,7 @@ export function CreateItemModal(props) {
                         <div className="modal-body">
                             {createFeedback && <p className="text-success">{createFeedback}</p>}
                             <div className="form-floating">
-                                <select className="form-select" value={type == "revenue" ? "Receita" : type  == "expense" ? "Despesa" : "Selecione"} onChange={(e) => {
+                                <select className="form-select" value={type == "revenue" ? "Receita" : type == "expense" ? "Despesa" : "Selecione"} onChange={(e) => {
                                     e.target.value == "Despesa" ? setType('expense') : e.target.value == "Receita" ? setType('revenue') : setType("Selecione")
                                     setIsValid(prevState => ({ ...prevState, date: true, name: true, amount: true, local: true, TypeExpenseId: true }))
                                     setValues(prevState => ({ ...prevState, date: '', name: '', amount: '', local: '', TypeExpenseId: '' }))
@@ -163,7 +161,7 @@ export function CreateItemModal(props) {
                                 </div>
                                 {!isValid.name && <p className="text-danger">Preencha o campo nome com pelo menos 3 caracteres.</p>}
                                 <div className="form-floating mb-3">
-                                    <input type="text" className="form-control" id="floatingInput" onBlur={(event) => { event.target.value < .01 ? setIsValid(prevState => ({ ...prevState, amount: false })) : setIsValid(prevState => ({ ...prevState, amount: true })) }} onChange={event => setValues((prevState) => ({ ...prevState, amount: formatValue(event.target.value) }))} value={values.amount} />
+                                    <input type="text" className="form-control" id="floatingInput" onBlur={(event) => { event.target.value < .01 ? setIsValid(prevState => ({ ...prevState, amount: false })) : setIsValid(prevState => ({ ...prevState, amount: true })) }} onChange={event => setValues((prevState) => ({ ...prevState, amount: formatValue(event.target.value)}))} value={values.amount} />
                                     <label htmlFor="floatingInput">Valor</label>
                                 </div>
                                 {!isValid.amount && <p className="text-danger">O campo valor não pode estar vazio.</p>}

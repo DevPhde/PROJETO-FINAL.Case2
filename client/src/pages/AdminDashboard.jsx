@@ -29,14 +29,23 @@ export default function AdminDashboard() {
         </div>
 
         {changeInfo == 'article' ? (<>
+
+          <h3 className='mt-5'> Lista de artigos</h3>
           <CreateArticleModal
             showModal={showCreateArticleModal}
             hideModal={() => setShowCreateArticleModal(false)}
             status={showCreateArticleModal}
           />
           <AdminTables param="allArticles" /></>) :
-          changeInfo == 'user' ? (<AdminTables param="getUsers" />) : (
-            <div className='mt-3'><TypeExpenseTable/></div>
+          changeInfo == 'user' ? (<>
+            <h3 className='mt-5'> Lista de usuários</h3>
+            <AdminTables param="getUsers" /></>) : (<>
+
+              <h3 className='mt-5'> Menu de tipo de despesas</h3>
+              <h5> Adicione um tipo de despesa ou exclua um já existente!</h5>
+              <h5> Para adicionar um tipo de despesa, <span className="span-admin" onClick={() => setShowCreateTypeExpenseModal(true)}> clique aqui </span>.</h5>
+              <div className='mt-3'><TypeExpenseTable /></div>
+            </>
           )}
 
         <NewTypeExpenseModal
@@ -45,10 +54,10 @@ export default function AdminDashboard() {
           status={showCreateTypeExpenseModal}
         />
 
-            {/* <TypeExpenseTable/> */}
+        {/* <TypeExpenseTable/> */}
 
-      <button onClick={() => setShowCreateTypeExpenseModal(true)}>Abrir modal</button>
-        {/* <button onClick={() => setShowCreateArticleModal(true)}>Adicionar Artigo</button> */}
+        {/* <button onClick={() => setShowCreateTypeExpenseModal(true)}>Abrir modal</button> */}
+        <button onClick={() => setShowCreateArticleModal(true)}>Adicionar Artigo</button>
       </div>
     </main>
   )
