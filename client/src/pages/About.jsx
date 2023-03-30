@@ -22,6 +22,8 @@ import Informative from '../images/informativo.png'
 
 function About() {
 
+    
+
 
     return (
 
@@ -36,7 +38,7 @@ function About() {
 
                     <div className="home-sp-text-field ">
 
-                        <h2 className="mb-5 pb-2 border-bottom border-success fw-bolder title-about " >Afinal, o que é o SYM?</h2>
+                        <h2 className="mb-5 pb-2  fw-bolder title-about " >Afinal, o que é o SYM?</h2>
 
                         <p className=" text-about ">O SYM(Save Your Money) é uma aplicação web de gerenciamento de finanças. Nele você consegue acompanhar suas finanças de perto e em tempo real. No SYM você consegue adicionar, editar e excluir despesas e receitas de forma rápida e sem complicação.
                             <br/>Nossa aplicação conta com uma interface simplificada, dinâmica e intuitiva. Através dos gráficos apresentados no dashboard, você consegue fazer uma análise mais assertiva de seus ganhos e suas perdas,
