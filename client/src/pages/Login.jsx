@@ -69,7 +69,7 @@ function Login() {
         setUser(e.response.data.message);
         setLoading(false);
       }
-    }
+    }}
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
     };
