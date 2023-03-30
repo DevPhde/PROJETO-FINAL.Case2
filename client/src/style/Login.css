@@ -1,0 +1,155 @@
+.main-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    padding: 2% 6%;
+    align-items: center;
+
+  }
+
+
+  
+  .div-img-login{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .img-logo{
+    width: 160px;
+
+
+  }
+
+  .img-login{
+    width: 80%;
+    align-self: center;
+
+  }
+  
+  .div-info-login{
+    width: 40%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5%;
+    background-color: #F8F8FF;
+    border-radius: 30px;
+    min-height: 600px;
+    height:100%;
+  
+  }
+  
+  .text-login, .title-login{
+    color: #29056B;
+    align-self: center;
+    font-weight: bolder;
+  }
+  
+
+  .text-login{
+    padding: 0 8%;
+  }
+  
+  .div-input-login{
+    width: 85%;
+  }
+  
+
+  
+  .div-btn-login{
+    width: 81%;
+    margin-top: 25px;
+  }
+  
+  .btn-login{
+    background-color: #048A78;;
+    color: white;
+    font-size: clamp(10px, 5vw, 25px);
+  }
+  
+  .btn-login:hover{
+    background-color: #023f37;
+    color: white;
+  }
+  .errInput{
+    color:red; 
+ }
+ .errEmail{
+    color:red;
+ }
+ .errPassword{
+    color:red;
+    display: none;
+ }
+  
+ 
+
+
+
+  @media (max-width: 1170px){
+  
+    .div-info-login{
+      padding-top: 5%;
+      padding-bottom: 5%;
+    
+    }
+  
+  }
+  
+  
+  @media (max-width: 890px)
+  {
+    .div-info-login{
+      padding: 0 10%;
+    
+    }
+  
+    .div-img-login{
+      width: 100%;
+
+    }
+  
+    .img-login{
+      width: 100%;
+ 
+  
+    }
+    .div-info-login{
+      width: 100%;
+    
+    }
+
+    .img-logo{
+      width: 100px;
+    }
+  
+    .title-login{
+      margin-top: 5%;
+      font-size: 25px;
+    }
+  
+    .div-btn-login{
+      margin-bottom: 10%;
+    }
+    #pass {
+      width: 150px;
+      padding-right: 20px;
+    }
+    
+    .olho {
+      cursor: pointer;
+      left: 160px;
+      position: absolute;
+      width: 20px;
+    }
+    .checkbox{
+      margin-bottom: 40px;
+      flex-direction: row;
+    }
+  }
+
+
