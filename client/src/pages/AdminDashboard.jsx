@@ -57,7 +57,7 @@ export default function AdminDashboard() {
         {/* <TypeExpenseTable/> */}
 
         {/* <button onClick={() => setShowCreateTypeExpenseModal(true)}>Abrir modal</button> */}
-        {/* <button onClick={() => setShowCreateArticleModal(true)}>Adicionar Artigo</button> */}
+        <button onClick={() => setShowCreateArticleModal(true)}>Adicionar Artigo</button>
       </div>
     </main>
   )

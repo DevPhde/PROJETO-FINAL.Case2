@@ -6,8 +6,6 @@ import '../style/nav.css'
 import Logo from '../images/logo2.png'
 import LogoSmall from '../images/logo5.png'
 import { Link, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from "react"
-import { AxiosProvider } from "../providers/axiosProvider"
 
 
 
@@ -95,9 +93,7 @@ if(model == "default"){
                   <Nav.Link className='navbar-site fw-medium btn btn-outline-dark px-2'                                    
                    onClick={() => {
                                     sessionStorage.clear()
-                                    window.location.reload()
-                                    navigate('/')
-
+                                    navigate('/login')
                                     }}> Sair</Nav.Link>
                     
                   </Nav>

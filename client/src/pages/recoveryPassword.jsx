@@ -3,7 +3,6 @@ import '../style/recoveryPassword.css'
 import { Link, useNavigate } from "react-router-dom";
 import { VerticalModal } from "../components/modals/VerticalModal";
 import { AxiosProvider } from "../providers/axiosProvider";
-import Logotipo from "../images/logo5.png"
 import IlustRecovery from "../images/ilust6.png"
 import { Loading } from "../components/Loading";
 

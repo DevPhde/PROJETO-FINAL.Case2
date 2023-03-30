@@ -111,7 +111,7 @@ export function RegisterUser() {
                 <img className="img-register" src={IlustRegister} />
             </div>
             <div>
-                {modal && <BackdropModal title={feedbackUser.error ? "Erro Interno" : "Conta criada!"} message={feedbackUser.message} to={feedbackUser.error ? null : "/"} namebutton={feedbackUser.error ? "Fechar" : "Ir para login"} />}
+                {modal && <BackdropModal title={feedbackUser.error ? "Erro Interno" : "Conta criada!"} message={feedbackUser.message} to={feedbackUser.error ? null : "/login"} namebutton={feedbackUser.error ? "Fechar" : "Ir para login"} />}
             </div>
             <div className="div-info-register container text-center  align-items-center">
                 <h1 className="fw-bold title-register mb-5">Cadastre-se</h1>

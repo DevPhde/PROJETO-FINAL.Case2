@@ -290,7 +290,7 @@ function Dashboard() {
                                 <div className="card card-dashboard">
                                     <div className="card-body">
                                         <h5 className="card-title">Saldo atual</h5>
-                                        <h6 className="card-subtitle mb-2 card-value">R$ {formatValue(total)}</h6>
+                                        <h6 className="card-subtitle mb-2 card-value">R$ {formatValue(total * 100)}</h6>
 
                                     </div>
                                     <div className="card-img">
@@ -302,7 +302,7 @@ function Dashboard() {
                                 <div className="card card-dashboard ">
                                     <div className="card-body">
                                         <h5 className="card-title">Total de gastos</h5>
-                                        <h6 className="card-subtitle mb-2 card-value">R$ {formatValue(totalValues.expenses)}</h6>
+                                        <h6 className="card-subtitle mb-2 card-value">R$ {formatValue(totalValues.expenses * 100)}</h6>
 
                                     </div>
                                     <div className="card-img">
@@ -313,7 +313,7 @@ function Dashboard() {
                                 <div className="card card-dashboard ">
                                     <div className="card-body">
                                         <h5 className="card-title">Total de Receitas</h5>
-                                        <h6 className="card-subtitle mb-2 card-value">R$ {formatValue(totalValues.revenues)}</h6>
+                                        <h6 className="card-subtitle mb-2 card-value">R$ {formatValue(totalValues.revenues * 100)}</h6>
 
                                     </div>
                                     <div className="card-img">

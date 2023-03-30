@@ -49,7 +49,7 @@ export function CreateArticleModal(props) {
         setValues(prevState => ({...prevState, title: '', text: '', image: ''}))
         setIsValid(prevState => ({...prevState, title: true, text: true}))
     },[props.status])
-
+console.log(values)
     return (
         <div>
             {feedbackUser.message &&  <BackdropModal
