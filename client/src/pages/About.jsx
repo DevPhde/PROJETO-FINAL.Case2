@@ -14,7 +14,7 @@ import Dinamic from '../images/dinamico.png'
 import Intuitive from '../images/intuitivo.png'
 import Practical from '../images/funcional.png'
 import Versatile from '../images/versatil.png'
-import Informative from '../images/informativo.png'
+import Informative from '../images/Informativo.png'
 import { AxiosProvider } from '../providers/axiosProvider';
 import { Loading } from '../components/Loading';
 import { useNavigate } from 'react-router-dom';
