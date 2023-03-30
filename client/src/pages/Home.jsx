@@ -68,7 +68,7 @@ function Home() {
 
                     <div className="img-home"><SavingMoney className="pigAnimation" /></div>
 
-                    {/* <img src={ImgHome} className="img-home" /> */}
+                  
 
 
                 </div>
@@ -76,7 +76,6 @@ function Home() {
 
 
 
-                    {/* <img src={HomeSP} className="img-home-sp" /> */}
                     < div className="img-home-sp">
 
                         <MakingMoney />
@@ -113,17 +112,17 @@ function Home() {
                     <h2 className="text-center fw-medium">Nosso objetivo é ajudar você a realizar seus sonhos</h2>
                     <div className="cards-home-field text-center">
 
-                        <Card border="dark rounded-3" className="shadow-lg p-3 mb-5 bg-body-tertiary rounded " style={{ width: '18rem' }}>
+                        <Card border="dark rounded-3" className="shadow-lg p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem', minHeight:'480px' }}>
                             <Card.Body>
-                            <img src={Acess} className="icon-card-home"/>
-                                <Card.Title className="mb-3">Acesso remoto</Card.Title>
+                            <img src={Acess} className="icon-card-home mt-3"/>
+                                <Card.Title className="mb-3 mt-2">Acesso remoto</Card.Title>
                                 <Card.Text>
                                     Acesse onde estiver e quando quiser! Nosso aplicativo via web permite que o controle das finanças seja feito em qualquer lugar, a qualquer hora. 
                                     Dessa forma, você consegue acompanhar suas finanças de forma constante e não precisa ficar preso a um único dispositivo.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card border="dark rounded-3" className="shadow-lg p-3 mb-5 bg-body-tertiary rounded" style={{ width: '18rem' }}>
+                        <Card border="dark rounded-3" className="shadow-lg p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem',minHeight:'480px' }}>
 
                             <Card.Body>
                                 <img src={Control} className="icon-card-home" />
@@ -135,7 +134,7 @@ function Home() {
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card border="dark rounded-3" className="shadow-lg p-3 mb-5 bg-body-tertiary rounded" style={{ width: '18rem' }}>
+                        <Card border="dark rounded-3" className="shadow-lg p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem', minHeight:'480px' }}>
 
                             <Card.Body>
                             <img src={Analisys} className="icon-card-home" />
@@ -146,7 +145,7 @@ function Home() {
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card border="dark rounded-3" className="shadow-lg p-3 mb-5 bg-body-tertiary rounded" style={{ width: '18rem' }}>
+                        <Card border="dark rounded-3" className="shadow-lg p-3 mb-5 bg-body-tertiary rounded card-home" style={{ width: '18rem',minHeight:'480px' }}>
 
                             <Card.Body>
                             <img src={Security} className="icon-card-home" />
