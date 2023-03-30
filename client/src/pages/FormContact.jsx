@@ -46,7 +46,6 @@ function FormContact() {
         } else if (Object.values(isValid).every(value => value == true)) {
             setFeedbackUser(prevState => ({ ...prevState, error: false, message: '' }))
             try {
-                console.log(values)
                 const response = await AxiosProvider.communication("POST", 'contact', null, values)
                 setFeedbackUser(prevState => ({ ...prevState, error: true, message: response.data.message }))
             } catch (e) {

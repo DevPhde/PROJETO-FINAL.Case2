@@ -41,8 +41,6 @@ function Dashboard() {
         try {
             const response = await AxiosProvider.communication('GET', 'user/informations/total/values', hash)
             setTotalValues(response.data.message)
-
-
         } catch (err) {
             console.log(err)
         }
@@ -71,14 +69,10 @@ function Dashboard() {
     const getInfo = async () => {
         try {
             const res = await AxiosProvider.communication('GET', 'user/informations', hash)
-
             setUserInfo(res.data.message.name.split(' '))
-
         } catch (err) {
             console.log(err)
         }
-
-
     }
 
     const getDataChart = async () => {
@@ -86,16 +80,12 @@ function Dashboard() {
             const res = await AxiosProvider.communication('GET', 'user/informations/total/types', hash)
             const data = res.data.message
             const temp = [["Tipos de gastos", "Total"]]
-
             let noValues = data.filter(function (item) {
                 return (item.total != 0);
             });
-
             setDataChartDonut(noValues != '')
-
             data.map(item => temp.push([item.name[0].toUpperCase() + item.name.substring(1), item.total]))
             setChartDonut(temp)
-
         } catch (err) {
             console.log(err)
         }
@@ -137,15 +127,9 @@ function Dashboard() {
                 if (data[i].year == currentYear) {
                     const numMonth = Number(data[i].month)
                     temp.push([month[numMonth], data[i].totalAmount])
-
                 }
             }
-
-
             setBarChartRevenues(temp)
-
-
-
         } catch (err) {
             console.log(err)
         }

@@ -24,17 +24,10 @@ export function NewTypeExpenseModal(props) {
             setIsValid(prevState => ({ ...prevState, name: false }))
         }
         else if (Object.values(isValid).every(value => value == true)) {
-            console.log('entrou')
             try {
-                console.log('try')
-                console.log(values)
                 const response = await AxiosProvider.communication('POST', 'expenses/types/new', null, values)
-                console.log('fez req')
-                console.log(response)
                 setFeedbackUser(prevState => ({ ...prevState, message: response.data.message }))
-
             } catch (e) {
-                console.log(e)
                 setFeedbackUser(prevState => ({ ...prevState, error: true, message: e.response.data.message }))
             }
         }

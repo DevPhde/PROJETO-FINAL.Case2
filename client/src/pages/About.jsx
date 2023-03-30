@@ -46,11 +46,6 @@ function About() {
     return (article.length == 0 ? (<Loading />) : (
 
         <div className="background">
-
-
-
-
-
             <main className="main-home">
                 <div className="about-first-part">
 
@@ -63,43 +58,20 @@ function About() {
 
 
                         </p>
-
                     </div>
-
-
                     <div className="img-about"><WhatIsIt /></div>
-
-
-
-
                 </div>
                 <div className="about-second-part">
-
-
-
                     < div className="img-home-sp">
-
                         <img src={Lion} className="img-lion" />
                     </div>
-
-
-
                     <div className="home-sp-text-field ">
-
                         <p className="text-about">
                             {article[1].text}
                         </p>
-
                     </div>
-
-
-
-
-
                 </div>
-
                 <div className="home-third-part">
-
                     <h1 className="text-center fw-bolder" style={{ color: "#048A78", fontSize: "clamp(35px,5vw,45px)" }}> Um pouco mais sobre o SYM</h1>
                     <h2 className="text-center fw-medium">Conheça um pouco de nossas principais características</h2>
 
@@ -187,22 +159,13 @@ function About() {
 
 
                     </div>
-
-
-
-
                 </div>
-
-
-
-
             </main>
         </div>
 
     )
 
     )
-
 }
 
 export default About

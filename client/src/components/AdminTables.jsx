@@ -50,13 +50,11 @@ function AdminTables(props) {
         setData(response.data);
         setLoadingScreen(false);
       } catch (e) {
-        console.log(e);
         setLoadingScreen(false);
       }
     }
     getArticles(props.param);
   }, [update]);
-  console.log(data);
 
   const handleDelete = (i) => {
     setDeleting((prevState) => ({ ...prevState, delete: true, key: i.id }));
@@ -69,7 +67,6 @@ function AdminTables(props) {
       : (path = `admin/deleteUser/${deleting.key}`);
     try {
       setLoadingReq(true);
-      console.log(deleting.key)
       const response = await AxiosProvider.communication("DELETE", path, hash);
       setFeedbackUser((prevState) => ({
         ...prevState,

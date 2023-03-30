@@ -47,8 +47,6 @@ export function CreateItemModal(props) {
         if (value === "0") {
             value += ",";
         }
-        console.log(decimal)
-        console.log(Number(values.amount.replace(/\./g, "").replace(",", "")* 100))
         return decimal 
     }
     const handleCreateItem = async () => {

@@ -45,7 +45,6 @@ function Login() {
       if (response.status == 200) {
         const hash = response.data.message;
         if (response.data.admin) {
-          console.log(response.message);
           sessionStorage.setItem("admin", true);
           navigate("/admin");
           setLoading(false);
@@ -55,7 +54,6 @@ function Login() {
         setLoading(false);
       }
     } catch (e) {
-      console.log(e);
       if (e.response.status == 500) {
         <BackdropModal
           title={"Erro Interno"}

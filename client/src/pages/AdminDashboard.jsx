@@ -10,12 +10,6 @@ export default function AdminDashboard() {
   const [changeInfo, setChangeInfo] = useState('')
   const [showCreateTypeExpenseModal, setShowCreateTypeExpenseModal] = useState(false)
 
-
-  useEffect(() => {
-    console.log(changeInfo)
-
-  }, [changeInfo])
-
   return (
     <main className="main-admin">
       <div className="admin-field text-center">
@@ -57,7 +51,7 @@ export default function AdminDashboard() {
         {/* <TypeExpenseTable/> */}
 
         {/* <button onClick={() => setShowCreateTypeExpenseModal(true)}>Abrir modal</button> */}
-        <button onClick={() => setShowCreateArticleModal(true)}>Adicionar Artigo</button>
+        {/* <button onClick={() => setShowCreateArticleModal(true)}>Adicionar Artigo</button> */}
       </div>
     </main>
   )
