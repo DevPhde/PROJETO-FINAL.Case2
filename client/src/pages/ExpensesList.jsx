@@ -125,7 +125,7 @@ function ExpensesList() {
                                 <div className="card card-dashboard ">
                                     <div className="card-body">
                                         <h5 className="card-title">Total de Despesas</h5>
-                                        <h6 className="card-subtitle mb-2 card-value">R$ {formatValue(totalValues.expenses)} </h6>
+                                        <h6 className="card-subtitle mb-2 card-value">R$ {formatValue(totalValues.expenses * 100)} </h6>
 
                                     </div>
                                     <div className="card-img img-list" style={{ width: "40%" }}>
@@ -137,7 +137,7 @@ function ExpensesList() {
                                 <div className="card card-dashboard ">
                                     <div className="card-body">
                                         <h5 className="card-title">Total de Despesas do Mês Vigente</h5>
-                                        <h6 className="card-subtitle mb-2 card-value">R$ {formatValue(monthValue.totalValue)}</h6>
+                                        <h6 className="card-subtitle mb-2 card-value">R$ {formatValue(monthValue.totalValue * 100)}</h6>
 
                                     </div>
                                     <div className="card-img img-list" style={{ width: "50%" }}>
@@ -148,7 +148,7 @@ function ExpensesList() {
                                 <div className="card card-dashboard ">
                                     <div className="card-body">
                                         <h5 className="card-title">Valor da Última Despesa</h5>
-                                        <h6 className="card-subtitle mb-2 card-value">R$ {formatValue(lastItem.amount)}</h6>
+                                        <h6 className="card-subtitle mb-2 card-value">R$ {formatValue(lastItem.amount * 100)}</h6>
 
                                     </div>
                                     <div className="card-img img-list" style={{ width: "60%" }}>
