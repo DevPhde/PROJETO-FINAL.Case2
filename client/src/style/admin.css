@@ -54,6 +54,14 @@
     color: white;
 }
 
+.span-admin{
+    color: #0a81c4;
+    cursor: pointer;
+}
+
+.span-admin:hover{
+
+}
 
 @media (max-width: 600px){
 
