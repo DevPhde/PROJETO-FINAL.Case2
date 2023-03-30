@@ -12,29 +12,6 @@ import { AxiosProvider } from "../providers/axiosProvider"
 
 
 function Header(props) {
-  const hash = sessionStorage.getItem('authorization')
-  const [userInfo, setUserInfo] = useState([])
-
-
-
-const getInfo = async () => {
-  try {
-      const res = await AxiosProvider.communication('GET', 'user/informations', hash)
-
-      setUserInfo(res.data.message.name.split(' '))
-
-  } catch (err) {
-      console.log(err)
-  }
-
-
-}
-
-useEffect(() => {
-
-  getInfo();
-
-}, [])
 
 
 if(props.model == "default"){
@@ -77,7 +54,7 @@ if(props.model == "default"){
     )
   }
 
-  else if(props.model == "logged" && userInfo.length != 0 ){
+  else if(props.model == "logged"){
 
     return (
 
