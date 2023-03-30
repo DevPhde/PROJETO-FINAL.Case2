@@ -5,16 +5,26 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import '../style/nav.css'
 import Logo from '../images/logo2.png'
 import LogoSmall from '../images/logo5.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react"
 import { AxiosProvider } from "../providers/axiosProvider"
 
 
 
-function Header(props) {
+
+function Header() {
+
+  const navigate = useNavigate()
+
+  let model = "default"
+
+  if(sessionStorage.getItem('admin')){
+    model = "logged"
+}
 
 
-if(props.model == "default"){
+
+if(model == "default"){
     return (
 
     <div >
@@ -54,7 +64,7 @@ if(props.model == "default"){
     )
   }
 
-  else if(props.model == "logged"){
+  else if(model == "logged"){
 
     return (
 
@@ -81,9 +91,14 @@ if(props.model == "default"){
                   <Nav.Link href="/about" className='navbar-site fw-medium'>Sobre o SYM</Nav.Link>
                  <Nav.Link href="/ourteam" className='navbar-site fw-medium'>Nossa Equipe</Nav.Link>
                   <Nav.Link href="/contact" className='navbar-site fw-medium'>Fale Conosco</Nav.Link>
+                  <Nav.Link href="/admin" className='navbar-site fw-medium'>Dashboard</Nav.Link>
+                  <Nav.Link className='navbar-site fw-medium btn btn-outline-dark px-2'                                    
+                   onClick={() => {
+                                    sessionStorage.clear()
+                                    window.location.reload()
+                                    navigate('/')
 
-
-                  <Nav.Link href="/login" className='navbar-site fw-medium btn btn-outline-dark px-2'> Sair</Nav.Link>
+                                    }}> Sair</Nav.Link>
                     
                   </Nav>
                 </Offcanvas.Body>
