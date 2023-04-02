@@ -1,4 +1,4 @@
-# MVP - PROJETO FINAL MÓDULO 06
+# SYM - Save Your Money - PROJETO FINAL MÓDULO 06
 
 ## :memo: Descrição do projeto
 
