@@ -52,7 +52,7 @@ function About() {
         getArticle()
     }, [])
 
-    return (article.length == 0 ? (<Loading />) : (
+    return (article.length == 0 ? ( <div style={{height:'100vh'}}><Loading className="loader-position"/></div>) : (
 
         <div className="background">
             <main className="main-home">
