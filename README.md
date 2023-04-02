@@ -6,7 +6,7 @@ O grupo deve decidir qual será o MVP utilizado nessa fase. O site precisa ter -
 serão criadas rotas /admin.
 
 ## O MVP
-Nosso MVP foi uma aplicação para gerenciamento financeiro, disponibilizada neste <a href="https://github.com/DevPhde/PROJETO-FINAL.MVP">repositório.</a>
+Nosso MVP foi uma aplicação para gerenciamento financeiro, disponibilizado neste <a href="https://github.com/DevPhde/PROJETO-FINAL.MVP">repositório.</a>
 
 ## Extra
 Optamos por criar um cadastro de administrador, sendo assim, é possível acessar o dashboard de admin pelo login, basta usar as credenciais admin/admin, tornando a aplicação mais dinâmica e não sendo necessário precisar digitiar /admin no browser para acessar tal dashboard.
