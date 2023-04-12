@@ -16,21 +16,21 @@ function Header() {
 
   let model = "default"
 
-  if(sessionStorage.getItem('admin')){
+  if (sessionStorage.getItem('admin')) {
     model = "logged"
-}
+  }
 
 
 
-if(model == "default"){
+  if (model == "default") {
     return (
 
-    <div >
+      <div >
 
 
-        <Navbar  expand="md" className="mb-3 navbar-site-field">
+        <Navbar expand="md" className="mb-3 navbar-site-field">
           <Container fluid>
-            <Link to="/"><img src={Logo} className="logo-navbar-site"  /></Link>
+            <Link to="/"><img src={Logo} className="logo-navbar-site" /></Link>
             <Navbar.Toggle aria-controls="offcanvasNavbar-expand-md" />
             <Navbar.Offcanvas
               id="offcanvasNavbar-expand-md"
@@ -39,73 +39,73 @@ if(model == "default"){
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id="offcanvasNavbarLabel-expand-md">
-                   <img src={LogoSmall} style={{width:"40%" }} />
+                  <img src={LogoSmall} style={{ width: "40%" }} />
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end pl-4 flex-grow-1 pe-3 ">
-                <Nav.Link href="/" className='navbar-site fw-medium'>Início</Nav.Link>
-                 <Nav.Link href="/about" className='navbar-site fw-medium'>Sobre o SYM</Nav.Link>
-                 <Nav.Link href="/ourteam" className='navbar-site fw-medium'>Nossa Equipe</Nav.Link>
-                <Nav.Link href="/contact" className='navbar-site fw-medium'>Fale Conosco</Nav.Link>
-                <Nav.Link href="/login" className='navbar-site fw-medium btn btn-outline-dark px-2 align-self-center' > Login</Nav.Link>
-                  
+                  <Link to="/" className='navbar-site fw-medium'>Início</Link>
+                  <Link to="/about" className='navbar-site fw-medium'>Sobre o SYM</Link>
+                  <Link to="/ourteam" className='navbar-site fw-medium'>Nossa Equipe</Link>
+                  <Link to="/contact" className='navbar-site fw-medium'>Fale Conosco</Link>
+                  <Link to="/login" className='navbar-site fw-medium btn btn-outline-dark px-2 align-self-center'> Login</Link>
+
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
         </Navbar>
-    
 
-    </div>
-    
+
+      </div>
+
     )
   }
 
-  else if(model == "logged"){
+  else if (model == "logged") {
 
     return (
 
       <div >
-  
-  
-          <Navbar  expand="md" className="mb-3 navbar-site-field">
-            <Container fluid>
-            <Link to="/"> <img src={Logo} className="logo-navbar-site"  /></Link>
-              <Navbar.Toggle aria-controls="offcanvasNavbar-expand-md" />
-              <Navbar.Offcanvas
-                id="offcanvasNavbar-expand-md"
-                aria-labelledby="offcanvasNavbarLabel-expand-md"
-                placement="end"
-              >
-                <Offcanvas.Header closeButton>
-                  <Offcanvas.Title id="offcanvasNavbarLabel-expand-md">
-                     <img src={LogoSmall} style={{width:"40%" }} />
-                  </Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body>
-                  <Nav className="justify-content-end pl-4 flex-grow-1 pe-3 ">
-                  <Nav.Link href="/" className='navbar-site fw-medium'>Início</Nav.Link>
-                  <Nav.Link href="/about" className='navbar-site fw-medium'>Sobre o SYM</Nav.Link>
-                 <Nav.Link href="/ourteam" className='navbar-site fw-medium'>Nossa Equipe</Nav.Link>
-                  <Nav.Link href="/contact" className='navbar-site fw-medium'>Fale Conosco</Nav.Link>
-                  <Nav.Link href="/admin" className='navbar-site fw-medium'>Dashboard</Nav.Link>
-                  <Nav.Link className='navbar-site fw-medium btn btn-outline-dark px-2'                                    
-                   onClick={() => {
-                                    sessionStorage.clear()
-                                    navigate('/login')
-                                    }}> Sair</Nav.Link>
-                    
-                  </Nav>
-                </Offcanvas.Body>
-              </Navbar.Offcanvas>
-            </Container>
-          </Navbar>
-      
-  
+
+
+        <Navbar expand="md" className="mb-3 navbar-site-field">
+          <Container fluid>
+            <Link to="/"> <img src={Logo} className="logo-navbar-site" /></Link>
+            <Navbar.Toggle aria-controls="offcanvasNavbar-expand-md" />
+            <Navbar.Offcanvas
+              id="offcanvasNavbar-expand-md"
+              aria-labelledby="offcanvasNavbarLabel-expand-md"
+              placement="end"
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id="offcanvasNavbarLabel-expand-md">
+                  <img src={LogoSmall} style={{ width: "40%" }} />
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <Nav className="justify-content-end pl-4 flex-grow-1 pe-3 ">
+                  <Link to="/" className='navbar-site fw-medium'>Início</Link>
+                  <Link to="/about" className='navbar-site fw-medium'>Sobre o SYM</Link>
+                  <Link to="/ourteam" className='navbar-site fw-medium'>Nossa Equipe</Link>
+                  <Link to="/contact" className='navbar-site fw-medium'>Fale Conosco</Link>
+                  <Link to="/admin" className='navbar-site fw-medium'>Dashboard</Link>
+                  <Link className='navbar-site fw-medium btn btn-outline-dark px-2'
+                    onClick={() => {
+                      sessionStorage.clear()
+                      navigate('/login')
+                    }}> Sair</Link>
+
+                </Nav>
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+
+
       </div>
-      
-      )
+
+    )
 
   }
 }
