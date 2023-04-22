@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { AxiosProvider } from "../providers/axiosProvider"
-import { Loading } from "./Loading"
 
 function JwtValidator() {
   const [isValid, setIsValid] = useState(undefined)
@@ -9,7 +8,6 @@ function JwtValidator() {
 
   useEffect(() => {
     if (sessionStorage.getItem('authorization')) {
-      
       const hash = sessionStorage.getItem('authorization')
       async function jwtValidator() {
         try {
@@ -33,7 +31,7 @@ function JwtValidator() {
       sessionStorage.clear()
       navigate('/')
     }
-  })
+  }, [])
 
   return isValid
 }
