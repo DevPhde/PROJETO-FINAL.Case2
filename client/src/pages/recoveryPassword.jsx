@@ -3,6 +3,7 @@ import '../style/recoveryPassword.css'
 import { Link, useNavigate } from "react-router-dom";
 import { VerticalModal } from "../components/modals/VerticalModal";
 import { AxiosProvider } from "../providers/axiosProvider";
+import Logotipo from "../images/logo5.png"
 import IlustRecovery from "../images/ilust6.png"
 import { Loading } from "../components/Loading";
 
@@ -56,6 +57,7 @@ function RecoveryPasswordPage() {
         message={<p>{message.message}</p>}
       />
       <div className="div-img-login position-relative">
+        <img className="img-logo position-absolute top-0 start-0" src={Logotipo} />
         <img className="img-login" src={IlustRecovery} />
       </div>
       <div className="div-info-recovery container text-center  align-items-center">
@@ -72,7 +74,7 @@ function RecoveryPasswordPage() {
 
         <div className="d-grid gap-2  div-btn-recovery">
           {!loading ? <button className="btn btn-login fw-bold" type="button" onClick={handleSubmit} >Enviar</button> : <Loading />}
-          <Link to="/login" ><button  className="btn text-decoration-none tn btn-recovery fw-bold text-white">Voltar </button></Link>
+          <Link to="/" className="btn text-decoration-none tn btn-recovery fw-bold text-white">Voltar</Link>
         </div>
 
       </div>

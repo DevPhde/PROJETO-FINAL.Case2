@@ -50,6 +50,8 @@ export function Tables(props) {
         setSelectedTypeExpense(selectedOption);
     };
 
+// console.log(data)
+
     const handleEdit = (i) => {
         setValues(() => ({
             id: i.id,
@@ -66,7 +68,6 @@ export function Tables(props) {
     const handleDelete = (i) => {
         setDeleting(prevState => ({ ...prevState, delete: true, key: i.id }));
     }
-
     const handleEditRow = async () => {
         if (Object.values(isValid).every(value => value == true)) {
             const data = {
@@ -94,7 +95,7 @@ export function Tables(props) {
         setDeleting(false)
         setLoadingReq(false)
     }
-
+    
     const formatValue = (value) => {
         let decimal = value
         decimal = decimal
@@ -134,7 +135,7 @@ export function Tables(props) {
         
         getInfos(props.param)
     }, [update])
-
+    
     if (props.param == 'expenses') {
         useEffect(() => {
             async function getTypeExpenses() {
@@ -149,10 +150,6 @@ export function Tables(props) {
             }
             getTypeExpenses();
         }, [update])
-
-    setTimeout(() => {
-        setUpdate(update + 1)
-    }, 2000)
 
     }
     return (
@@ -275,7 +272,9 @@ export function Tables(props) {
                                             <td className="text-center"><button onClick={() => handleEdit(info)} type="button" className="btn ms-1 p-1 px-2 btn-success">Editar</button>
                                                 <button onClick={() => handleDelete(info)} type="button" className="btn ms-1 p-1 btn-danger">Deletar</button></td>
                                         </tr>
+
                                     </tbody>
+
                                 ))}
                             </Table>
                         </div>) : (<div>
@@ -315,7 +314,7 @@ export function Tables(props) {
                                             </tr>
                                         </thead>
                                     </Table>
-                                    <Loading className="loader-position" />
+                                    <Loading className="loader-centered"/>
                                 </div>
                             ) : (
                                 <div>
